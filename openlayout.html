@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ganga Hospital Open Injury</title>
+     <meta name="viewport" content="widdiv=device-widdiv, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>pag1</title>
+   <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="jquery.mobile-1.2.0.min.js"></script>
+
+
+    <script>
+       $(document).on('pagebeforeshow', '#second', function(e, data){     
+    //alert("Skin Score  Value" + data.prevPage.find('#skin').val());
+});
+
+ $(document).on('pagebeforeshow', '#third', function(e, data){     
+    alert("Skin Score  Value  " + data.prevPage.find('#skinscore').val());
+});
+    
+
+</script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('#s1').click(function() {
+             $('#skinscore').val(1);
+            });
+			 $('#s2').click(function() {
+             $('#skinscore').val(2);
+            });
+			 $('#s3').click(function() {
+             $('#skinscore').val(3);
+            });
+			 $('#s4').click(function() {
+             $('#skinscore').val(4);
+            });
+			 $('#s5').click(function() {
+             $('#skinscore').val(5);
+            });
+        });     
+    </script>
+      
+</head>	
+<body>
+    <div data-role="page" id="index">
+        <div data-theme="a" data-role="header">
+            <h3>
+                Ganga Hospital Open Injury
+            </h3>
+            <div align="center">Severity Score</div>
+            <div align="center">(GHOISS)</div>
+        </div>
+
+        <div data-role="content">
+            <a href="#second" data-role="button" id="change-page-button">Converting Tissue - Skin</a>
+            <input type="text" style="visibility:hidden;" value="1" id="skin"/>
+             <a href="#third" data-role="button" id="change-page-button">Muscle, Tendon, Nerves</a>
+            <input type="text"  style="visibility:hidden;" value="2" id="mtn"/>
+              <a href="#fourth" data-role="button" id="change-page-button">Bone and joint score</a>
+            <input type="text"  style="visibility:hidden;" value="3" id="bj"/>
+              <a href="#fifth" data-role="button" id="change-page-button">Co-morbid factors Influencing outcome</a>
+            <input type="text"  style="visibility:hidden;" value="4" id="cmf"/>
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed">
+<p style="font-size:12px; text-align:center">		A Score for predicting salvage and outcome in Gusstillo type III-A & Type  III-B open tibial fractures. 
+JBJS 2006 : Volume 88-B, No.10, October 2006
+</p>
+        </div>
+    </div> 
+    <div data-role="page" id="second">
+        <div data-theme="a" data-role="header">
+            <a href="#index" class="ui-btn-left">Back</a>            
+            <h3>
+               Converting Tissue - Skin
+            </h3>
+            <a href="#third" class="ui-btn-right">Next</a>            
+        </div>
+
+        <div data-role="content">
+			<table align="center">
+            	<tr>
+                	<td valign="middle">
+                    	<table>
+                        <tr>
+                        	<td>
+                            	Example
+                            </td>
+                            <td align="center" valign="middle">
+                            Description
+                            </td>
+                            <td align="center" valign="middle">
+                            Score
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                	<td>
+                    	<img src="leg1ic.png" alt="skin1" />
+                    </td>
+                    <td>
+                    <a href="#" id="s1" data-role="button">Wounds without skin loss - Not over the fracture </a>
+                    </td>
+                    <td>&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>&nbsp;</td>
+                </tr>
+                 <tr>
+                	<td>
+                    	<img src="leg2ic.png" alt="skin2" />
+                    </td>
+                    <td>
+                    <a href="#" id="s2" data-role="button">Wounds without skin loss - Exposing the fracture </a>
+                    </td>
+                     <td>&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="skin2"/>&nbsp;</td>
+                    </tr> 
+                    <tr>
+                	<td>
+                    	<img src="leg3ic.png" alt="skin3" />
+                    </td>
+                    <td>
+                    <a href="#" id="s3" data-role="button">Wounds with skin loss - Not over the fracture </a>
+                    </td>
+                     <td>&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="skin3"/>&nbsp;</td>
+                    </tr>  
+                    
+                     <tr>
+                	<td>
+                    	<img src="leg4ic.png" alt="skin4" />
+                    </td>
+                    <td>
+                    <a href="#" id="s4" data-role="button">Wounds with skin loss - over the fracture </a>
+                    </td>
+                     <td>&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="skin4"/>&nbsp;</td>
+                    </tr>  
+                     <tr>
+                	<td>
+                    	<img src="leg5ic.png" alt="skin5" />
+                    </td>
+                    <td>
+                    <a href="#" id="s5" data-role="button">Circumferetial wound with skin loss -  Wound with Skin Loss </a>
+                    </td>
+                                         <td>&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>&nbsp;</td>
+
+                    </tr>  
+
+
+                
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+            
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed">
+			<table align="center">
+            	<tr>
+                	<td>
+                    Score - &nbsp;
+                  
+                    </td>
+                    <td>
+                      <input type="text"  readonly="true"  style="width:100px; text-align:center" value="0" id="skinscore"/>&nbsp;
+                    </td>
+                    
+                </tr>
+            </table>
+        
+
+        </div>
+    </div>
+    <div data-role="page" id="third">
+        <div data-theme="a" data-role="header">
+        <a href="#second" class="ui-btn-left">Back</a>
+            <h3>
+               Muscle, Tendon, Nerves
+            </h3>
+            
+             <a href="#fourth" class="ui-btn-right">Next</a> 
+        </div>
+
+        <div data-role="content">
+
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed">
+
+        </div>
+    </div>    
+    
+      <div data-role="page" id="fourth">
+        <div data-theme="a" data-role="header">
+         <a href="#third" class="ui-btn-left">Back</a>
+            <h3>
+              Bone and joint score
+            </h3>
+           
+             <a href="#fifth" class="ui-btn-right">Next</a> 
+        </div>
+
+        <div data-role="content">
+
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed">
+
+        </div>
+    </div>      
+    
+    <div data-role="page" id="fifth">
+        <div data-theme="a" data-role="header">
+        <a href="#fourth" class="ui-btn-left">Back</a>
+            <h3>
+              Co-morbid factors Influencing outcome
+            </h3>
+            
+        </div>
+
+        <div data-role="content">
+
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed">
+
+        </div>
+    </div>      
+</body>
+</html>   
