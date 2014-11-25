@@ -24,9 +24,15 @@
 
 </script>
 <script type="text/javascript">
+
+
         $(document).ready(function() {
+			jQuery('body').css('overflow','hidden'); 
+			
             $('#s1').click(function() {
              $('#skinscore').val(1);
+			 $('#s1').css("cursor","pointer");
+			 
             });
 			 $('#s2').click(function() {
              $('#skinscore').val(2);
@@ -41,11 +47,18 @@
              $('#skinscore').val(5);
             });
 			
+			 $('#exit').click(function() {
+              //window.close();
+			  self.close();
+			
+			 });
+			 
+			
         });     
     </script>
     
     <style type="text/css">
-		.bg
+		.bgcolor
 		{
 			background: rgb(235,233,249); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* FF3.6+ */
@@ -67,6 +80,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 			//get collapse content selector
 			var collapse_content_selector = $(this).attr('href');					
  $("#img").css("display","none");
+
+ 
 			//make the collapse content to be shown or hide
 			var toggle_switch = $(this);
 			$(collapse_content_selector).toggle(function(){
@@ -102,6 +117,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 	
 	
 }
+tr
+{
+	cursor:pointer;
+}
+.bg
+{
+	background: url(bg3.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 		</style>
         
         
@@ -109,12 +136,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 </head>	
 <body>
 
-    <div style="width:100%;height:100%" data-role="page" id="index">
+    <div class="bg" data-role="page" id="index">
+    
     <div style="width:100%;height:100%" id="top">
     	<img id="img" href="#collapse1" class="nav-toggle" width="100%" style="cursor:pointer" height="100%" src="bj.png" />
     </div>
-    <div id="collapse1" style="display:none;background-image:url(bg3.png); background-repeat:repeat-y;height:100%">
-        <div data-theme="a" data-role="header"  data-position="fixed">
+    <div id="collapse1" style="display:none;">
+        <div data-theme="b" data-role="header"  data-position="fixed">
             <h3>
                 Ganga Hospital Open Injury
             </h3>
@@ -133,30 +161,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
             <input type="text"  style="visibility:hidden;" value="4" id="cmf"/>
         </div>
 
-        <div data-theme="a" data-role="footer" data-position="fixed">
+        <div data-theme="b" data-role="footer" data-position="fixed">
+        <p style="text-align:center">Rjasekaran S, Dheenahdayalan j, Shetty A.P Sundararajan SR. Kumar M, Raja Sabapathy S</p>
 <p style="font-size:12px; text-align:center">		A Score for predicting salvage and outcome in Gusstillo type III-A & Type  III-B open tibial fractures. 
 JBJS 2006 : Volume 88-B, No.10, October 2006
 </p>
         </div>
         </div>
     </div> 
-    <div data-role="page" id="second">
-        <div data-theme="a" data-role="header" data-position="fixed">
+    <div data-role="page" class="bg" id="second">
+        <div data-theme="a" data-role="header" data-position="fixed" style="position:inherit">
             <a href="#index" class="ui-btn-left">Back</a>            
             <h3>
                Converting Tissue - Skin
             </h3>
-            <a href="#third" class="ui-btn-right">Next</a>            
+            <a href="#third" class="ui-btn-right">Next</a>  
+            <a id="exit" class="ui-btn-right">Exit</a>           
         </div>
 
-        <div data-role="content">
-        
-        
-       <table style="width:100%" align="center">
+        <div data-role="content" style="height:400px;overflow:scroll-y; width:100%">
+            <table align="center">
             	<tr>
-                	<td style="width:100%" valign="middle">
+                	<td  valign="middle">
                     	<table width="100%">
-                        <tr class="bg">
+                        <tr>
                         	<td align="center" valign="middle">
                             	Example
                               </td>
@@ -168,16 +196,16 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
                             </td>
                             
                         </tr>
-                        <tr class="bg">
+                        <tr  id="s1">
                 	<td>
                     	<img src="leg1ic.png" alt="skin1" />
                     </td>
                     <td align="center" valign="top">
-                    <p id="s1" style="cursor:pointer">Wounds without skin loss - Not over the fracture </p>
+                    <p style="cursor:pointer">Wounds without skin loss - Not over the fracture </p>
                     </td>
                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>&nbsp;</td>
                 </tr>
-                 <tr class="bg">
+                 <tr>
                 	<td>
                     	<img src="leg2ic.png" alt="skin2" />
                     </td>
@@ -186,7 +214,7 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
                     </td>
                      <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="skin2"/>&nbsp;</td>
                     </tr> 
-                    <tr class="bg">
+                    <tr>
                 	<td>
                     	<img src="leg3ic.png" alt="skin3" />
                     </td>
@@ -196,7 +224,7 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
                      <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="skin3"/>&nbsp;</td>
                     </tr>  
                     
-                     <tr class="bg">
+                     <tr>
                 	<td>
                     	<img src="leg4ic.png" alt="skin4" />
                     </td>
@@ -205,7 +233,7 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
                     </td>
                      <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="skin4"/>&nbsp;</td>
                     </tr>  
-                     <tr class="bg">
+                     <tr>
                 	<td>
                     	<div align="justify"><img src="leg5ic.png" alt="skin5" />
                   	  </div></td>
@@ -224,12 +252,12 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
                 </tr>
                 
             </table>
-        	
-           
+
+              
         
         </div>
 
-        <div data-theme="a" data-role="footer" data-position="fixed">
+        <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
 			<table align="center">
             	<tr>
                 	<td>
