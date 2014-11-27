@@ -56,7 +56,20 @@
 			  //navigator.app.backHistory();
 			  //alert('Exit is working');
 			  //navigator.app.exitApp();
-				close_window();
+			//close_window();
+			
+			var collapse_content_selector = $(this).attr('href');	
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Show');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Hide');
+			  }
+			});
 			
 		//	navigator.app.loadUrl('http://example.com');
 		//	window.location = 'http://example.com';
@@ -110,7 +123,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 		  $('.nav-toggle').click(function(){
 			//get collapse content selector
 			var collapse_content_selector = $(this).attr('href');					
- $("#img").css("display","none");
+            $("#img").css("display","none");
 
  
 			//make the collapse content to be shown or hide
@@ -128,6 +141,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
  
 		});	
 		</script>
+        
+        
 		<style>	
 		.round-border {
 			border: 1px solid #eee;
@@ -291,7 +306,7 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
         <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
               
         
-        <a href="http://google.com" class="ui-btn-left" > Exit </a>
+        <a id="exit" href="#second"  class="ui-btn-left" > Exit </a>
 
 			<table align="center">
             	<tr>
