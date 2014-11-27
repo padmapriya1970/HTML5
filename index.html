@@ -50,14 +50,27 @@
 			 $('#exit').click(function() {
               //window.close();
 			  //application.close();
-			  close();
+			 // close();
 			  //$("#img").css("display","none");
+			  //navigator.app.backHistory();
+			  alert('Exit is working');
+			 navigator.app.exitApp();
+			
+//			navigator.app.loadUrl('http://example.com');
+	//		window.location = 'http://example.com';
 			
 			 });
-			 
+			 	
 			
         });     
     </script>
+    
+   <!-- <syntaxhighlight lang="javascript">
+navigator.app.backHistory();
+$('#exit').click(function() {
+navigator.app.exitApp();
+});
+</syntaxhighlight>-->
     
     <style type="text/css">
 		.bgcolor
