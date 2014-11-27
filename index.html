@@ -47,23 +47,31 @@
              $('#skinscore').val(5);
             });
 			
-			 $('#exit').click(function() {
+			$('#exit').click(function() {
               //window.close();
 			  //application.close();
 			 // close();
 			  //$("#img").css("display","none");
 			  //navigator.app.backHistory();
-			  alert('Exit is working');
-			 navigator.app.exitApp();
+			  //alert('Exit is working');
+			  //navigator.app.exitApp();
+				close_window();
 			
-//			navigator.app.loadUrl('http://example.com');
-	//		window.location = 'http://example.com';
+		//	navigator.app.loadUrl('http://example.com');
+		//	window.location = 'http://example.com';
 			
 			 });
 			 	
 			
         });     
     </script>
+    <syntaxhighlight lang="javascript">
+    function close_window() {
+    if (confirm("Exit?")) {
+        navigator.app.exitApp();
+    	}
+	}
+</syntaxhighlight>
     
    <!-- <syntaxhighlight lang="javascript">
 navigator.app.backHistory();
@@ -157,7 +165,7 @@ tr
     	<img id="img" href="#collapse1" class="nav-toggle" width="100%" style="cursor:pointer" height="100%" src="bj.png" />
     </div>
     <div id="collapse1" style="display:none;">
-        <div data-theme="b" data-role="header"  data-position="fixed">
+        <div data-theme="b" data-role="header"  data-position="fixed" style="position:fixed">
             <h3>
                 Ganga Hospital Open Injury
             </h3>
@@ -176,7 +184,7 @@ tr
             <input type="text"  style="visibility:hidden;" value="4" id="cmf"/>
         </div>
 
-        <div data-theme="b" data-role="footer" data-position="fixed">
+        <div data-theme="b" data-role="footer" data-position="fixed" style="position:fixed">
         <p style="text-align:center">Rjasekaran S, Dheenahdayalan j, Shetty A.P Sundararajan SR. Kumar M, Raja Sabapathy S</p>
 <p style="font-size:12px; text-align:center">		A Score for predicting salvage and outcome in Gusstillo type III-A & Type  III-B open tibial fractures. 
 JBJS 2006 : Volume 88-B, No.10, October 2006
@@ -187,9 +195,9 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
     <div data-role="page" class="bg" id="second">
         <div data-theme="a" data-role="header" data-position="fixed" style="position:fixed">
             <a href="#index" class="ui-btn-left">Back</a>            
-            <h3>
-               Converting Tissue - Skin
-            </h3>
+           
+              <p align="center" style="text-align:center"> Converting Tissue - Skin</p>
+            
             <a href="#third" class="ui-btn-right">Next</a>  
                     
         </div>
@@ -273,7 +281,10 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
         </div>
 
         <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
-         <a id="exit" href="#" class="ui-btn-left">Exit</a> 
+              
+        
+        <a id="exit" href="#" class="ui-btn-left" > Exit </a>
+
 			<table align="center">
             	<tr>
                 	<td>
