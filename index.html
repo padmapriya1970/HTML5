@@ -1,411 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ganga Hospital Open Injury</title>
-     <meta name="viewport" content="widdiv=device-widdiv, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="viewport" content="width=device-width">
-    <title>pag1</title>
-   <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
-    <script src="jquery-1.8.2.min.js"></script>
-    <script src="jquery.mobile-1.2.0.min.js"></script>
-    <script src="Jailor.js"></script>
-
-
-    <script>
-       $(document).on('pagebeforeshow', '#second', function(e, data){     
-    //alert("Skin Score  Value" + data.prevPage.find('#skin').val());
-});
-
- /*$(document).on('pagebeforeshow', '#third', function(e, data){     
-    alert("Skin Score  Value  " + data.prevPage.find('#skinscore').val());
-});*/
+    <title>Carosuel App template</title>
+<!--
+    This template can be used for simple app with carousel slider, for creating applications similar to news app.
+-->  
     
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+    <!--AppFramework plugin for carousel -->
+    <script type="text/javascript" charset="utf-8" src="appframework/plugins/af.carousel.js"></script>
 
-</script>
-<script type="text/javascript">
-
-
-        $(document).ready(function() {
-			jQuery('body').css('overflow','hidden'); 
-			
-            $('#s1').click(function() {
-             $('#skinscore').val(1);
-			 $('#s1').css("cursor","pointer");
-			 
-            });
-			 $('#s2').click(function() {
-             $('#skinscore').val(2);
-            });
-			 $('#s3').click(function() {
-             $('#skinscore').val(3);
-            });
-			 $('#s4').click(function() {
-             $('#skinscore').val(4);
-            });
-			 $('#s5').click(function() {
-             $('#skinscore').val(5);
-            });
-			
-			$('#exit').click(function() {
-              
-			  //$("#img").css("display","none");
-			window.history.go(-1);
-			//alert('Exit is fired');
-			// bgExitHandler();
-			//document.body.close();
-			//window.onclose(this);
-			//window.close();
-			//window.closed(this);
-			//application.close();
-			//navigator.app.backHistory();
-			//navigator.app.exitApp();
-			//window.navigator.app.backHistory();
-			//window.navigator.app.exitApp();
-			//window.app.exitApp();
-			//window.close();
-			//window.exit();
-			//navigator.app.exitApp();
-			//app.exit();
-			//app.exitApp();
-			//exitApp();
-			//close();
-			//exit();
-			
-			
-		/*	var collapse_content_selector = $(this).attr('href');	
-			//make the collapse content to be shown or hide
-			var toggle_switch = $(this);
-			$(collapse_content_selector).toggle(function(){
-			  if($(this).css('display')=='none'){
-                                //change the button label to be 'Show'
-				toggle_switch.html('Show');
-			  }else{
-                                //change the button label to be 'Hide'
-				toggle_switch.html('Hide');
-			  }
-			});
-			*/
-		//	navigator.app.loadUrl('http://example.com');
-		//	window.location = 'http://example.com';
-			
-			 });
-			 
-			 
-			 $('#home').click(function() {
-				window.history.go(1) 
-				window.history.clear();
-			 });
-			 	
-			
-        });     
+<!-- Required if packaging to native app using Intel XDK -->    
+    <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
     </script>
-    <script lang="javascript">
-    function close_window() {
-    if (confirm("Exit?")) {
-        //navigator.app.exitApp();
-		//window.close();
-		//app.exitApp();
-		//$(document).css("display","none");
-		//$('#second').css("display","none");
-		//void android.app.exit();
-		exit();
-		// BackButton.exitApp();
-    	}
-		
-		
-	}
-	
-	function bgExitHandler(e) {
-    Enabler.exit('Background Exit');
-}
-</script>
-    
-   <!-- <syntaxhighlight lang="javascript">
-navigator.app.backHistory();
-$('#exit').click(function() {
-navigator.app.exitApp();
-});
-</syntaxhighlight>-->
-    
-    <style type="text/css">
-		.bgcolor
-		{
-			background: rgb(235,233,249); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(235,233,249,1)), color-stop(50%,rgba(216,208,239,1)), color-stop(51%,rgba(206,199,236,1)), color-stop(100%,rgba(193,191,234,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea',GradientType=0 ); /* IE6-9 */
-
-		}
-	</style>
-    
-    
+<!-- end Intel XDK code -->
     
     <script>
-		$(document).ready(function() {
-		  $('.nav-toggle').click(function(){
-			//get collapse content selector
-			var collapse_content_selector = $(this).attr('href');					
-            $("#img").css("display","none");
 
- 
-			//make the collapse content to be shown or hide
-			var toggle_switch = $(this);
-			$(collapse_content_selector).toggle(function(){
-			  if($(this).css('display')=='none'){
-                                //change the button label to be 'Show'
-				toggle_switch.html('Show');
-			  }else{
-                                //change the button label to be 'Hide'
-				toggle_switch.html('Hide');
-			  }
-			});
-		  });
- 
-		});	
-		</script>
+$.ui.autoLaunch = false;
+$.ui.animateHeaders = false;       
+
+$(document).ready(function(){
+    $.ui.launch();
+});
+
+$.ui.ready(function(){
+    carouselSetup();
+});        
         
+function carouselSetup(){
+    // set size of carousel
+    $("#carousel").width($("#carousel").closest(".panel").width());
+    $("#carousel").height($("#carousel").closest(".panel").height()-25);
+
+    var options={
+       vertical:false, // page up/down
+       horizontal:true, // page left/right
+       pagingDiv:"carousel_dots", // div to hold the dots for paging
+       pagingCssName:"carousel_paging", //classname for the paging dots
+       pagingCssNameSelected: "carousel_paging_selected", //classname for the selected page dots
+       wrap:true //Creates a continuous carousel
+    }
+    var carousel = $("#carousel").carousel(options);
+}
+
+    </script>
+    <style>
+        #carousel {
+            overflow:hidden;
+            margin:0 -10px;
+        }
         
-		<style>	
-		.round-border {
-			border: 1px solid #eee;
-			border: 1px solid rgba(0, 0, 0, 0.05);
-			-webkit-border-radius: 4px;
-			-moz-border-radius: 4px;
-			border-radius: 4px;
-			padding: 10px;
-			margin-bottom: 5px;
+        .carousel_page {
+            overflow: auto; 
+            -webkit-scrolling:touch;
+            padding:0 10px;
+        }
+
+        #carousel_dots {
+            text-align: center; 
+            margin-left: auto; 
+            margin-right: auto; 
+            clear: both;
+
+            position:relative;
+            top:0;
+            z-index:200;
+        }
+        
+        .carousel_paging {
+			border-radius: 10px;
+			background: #ccc;
+			width: 10px;
+			height: 10px;
+			display:inline-block;
 		}
-		
-.mainbg	
-{
-	padding:0px;
-	margin:0px;
-	width:100%;
-	
-	
-	
-}
-tr
-{
-	cursor:pointer;
-}
-.bg
-{
-	background: url(bg3.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-		</style>
+
+		.carousel_paging_selected {
+			border-radius: 10px;
+			background: #000;
+			width: 10px;
+			height: 10px;
+			display:inline-block;
+		}
         
+        #carousel h2 {
+            text-align: center;
+        }
+    </style>    
+</head>
+<body> 
+<div id="afui">
+
+    <div id="content"> 
         
-      
-</head>	
-<body>
-
-    <div class="bg" data-role="page" id="index">
-    
-    <div style="width:100%;height:100%" id="top">
-    	<img id="img" href="#collapse1" class="nav-toggle" width="100%" style="cursor:pointer" height="100%" src="bj.png" />
-    </div>
-    <div id="collapse1" style="display:none;">
-        <div data-theme="b" data-role="header"  data-position="fixed" style="position:fixed">
-            <h3>
-                Ganga Hospital Open Injury
-            </h3>
-            <div align="center">Severity Score</div>
-            <div align="center">(GHOISS)</div>
-        </div>
-
-        <div data-role="content">
-            <a href="#second" data-role="button" id="change-page-button">Converting Tissue - Skin</a>
-            <input type="text" style="visibility:hidden;" value="1" id="skin"/>
-             <a href="#third" data-role="button" id="change-page-button">Muscle, Tendon, Nerves</a>
-            <input type="text"  style="visibility:hidden;" value="2" id="mtn"/>
-              <a href="#fourth" data-role="button" id="change-page-button">Bone and joint score</a>
-            <input type="text"  style="visibility:hidden;" value="3" id="bj"/>
-              <a href="#fifth" data-role="button" id="change-page-button">Co-morbid factors Influencing outcome</a>
-            <input type="text"  style="visibility:hidden;" value="4" id="cmf"/>
-        </div>
-
-        <div data-theme="b" data-role="footer" data-position="fixed" style="position:fixed">
-        <p style="text-align:center">Rjasekaran S, Dheenahdayalan j, Shetty A.P Sundararajan SR. Kumar M, Raja Sabapathy S</p>
-<p style="font-size:12px; text-align:center">		A Score for predicting salvage and outcome in Gusstillo type III-A & Type  III-B open tibial fractures. 
-JBJS 2006 : Volume 88-B, No.10, October 2006
-</p>
-        </div>
-        </div>
-    </div> 
-    <div data-role="page" class="bg" id="second">
-        <div data-theme="a" data-role="header" data-position="fixed" style="position:fixed">
-            <a href="#index" class="ui-btn-left">Back</a>            
-           
-              <p align="center" style="text-align:center"> Converting Tissue - Skin</p>
-            
-            <a href="#third" class="ui-btn-right">Next</a>  
-                    
-        </div>
-
-        <div data-role="content" style="height:100%;overflow:scroll-y; overflow-style:marquee-line">
-            <table align="center">
-            	<tr>
-                	<td  valign="middle">
-                    	<table width="100%">
-                        <tr>
-                        	<td align="center" valign="middle">
-                            	Example
-                              </td>
-                            <td align="center" valign="middle">
-                            Description
-                            </td>
-                            <td align="center" valign="middle">
-                            Score
-                            </td>
-                            
-                        </tr>
-                        <tr  id="s1">
-                	<td>
-                    	<img src="leg1ic.png" alt="skin1" />
-                    </td>
-                    <td align="center" valign="top">
-                    <p style="cursor:pointer">Wounds without skin loss - Not over the fracture </p>
-                    </td>
-                    <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>&nbsp;</td>
-                </tr>
-                 <tr id="s2">
-                	<td>
-                    	<img src="leg2ic.png" alt="skin2" />
-                    </td>
-                    <td align="center" valign="top">
-                    <p style="cursor:pointer" >Wounds without skin loss - Exposing the fracture </p>
-                    </td>
-                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="skin2"/>&nbsp;</td>
-                    </tr> 
-                    <tr  id="s3">
-                	<td>
-                    	<img src="leg3ic.png" alt="skin3" />
-                    </td>
-                    <td align="center" valign="top">
-                    <p style="cursor:pointer">Wounds with skin loss - Not over the fracture </p>
-                    </td>
-                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="skin3"/>&nbsp;</td>
-                    </tr>  
-                    
-                     <tr id="s4">
-                	<td>
-                    	<img src="leg4ic.png" alt="skin4" />
-                    </td>
-                    <td align="center" valign="top">
-                    <p style="cursor:pointer">Wounds with skin loss - over the fracture </p>
-                    </td>
-                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="skin4"/>&nbsp;</td>
-                    </tr>  
-                     <tr id="s5">
-                	<td>
-                    	<div align="justify"><img src="leg5ic.png" alt="skin5" />
-                  	  </div></td>
-                    <td align="center" valign="top">
-                    <p style="cursor:pointer" align="justify" >Circumferetial wound with skin loss -  Wound with Skin Loss </p>
-                    </td>
-                                         <td align="center" valign="top"><div align="justify">&nbsp; 
-                                         <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>&nbsp;</div></td>
-
-                    </tr>  
-
-
-                
-                        </table>
-                    </td>
-                </tr>
-                
-            </table>
-
-              
-        
-        </div>
-
-        <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
-              
-        
-        <a id="exit" class="ui-btn-left" > Exit </a>
-
-			<table align="center">
-            	<tr>
-                	<td>
-                    Score - &nbsp;
-                  
-                    </td>
-                    <td>
-                      <input type="text"  readonly="true"  style="width:100px; text-align:center" value="0" id="skinscore"/>&nbsp;
-                    </td>
-                    
-                </tr>
-            </table>
-         <a id="home" href="#index" class="ui-btn-right">Home</a> 
-
+    <!--Main Pages-->
+        <div class="panel" title="Home" id="home" data-footer="none" selected="true" style="overflow:hidden">
+            <div id="carousel">
+                <div class="carousel_page">
+                    <h2>Page One</h2>
+                    <p>Text and images for Page One goes here. Swipe to go to the next page.</p>
+                </div>
+                <div class="carousel_page">
+                    <h2>Page Two</h2>
+                    <p>Text and images for Page Two goes here. Swipe to go to the next page.</p>
+                </div>
+                <div class="carousel_page">
+                    <h2>Page Three</h2>
+                    <p>Text and images for Page Three goes here. Swipe to go to the next page.</p>
+                </div>
+                <div class="carousel_page">
+                    <h2>Page Four</h2>
+                    <p>Text and images for Page Four goes here. Swipe to go to the next page.</p>
+                </div>
+            </div> 
+            <div id="carousel_dots"></div>
         </div>
     </div>
-    <div data-role="page" id="third">
-        <div data-theme="a" data-role="header">
-        <a href="#second" class="ui-btn-left">Back</a>
-            <h3>
-               Muscle, Tendon, Nerves
-            </h3>
-            
-             <a href="#fourth" class="ui-btn-right">Next</a> 
-        </div>
-
-        <div data-role="content">
-
-        </div>
-
-        <div data-theme="a" data-role="footer" data-position="fixed">
-
-        </div>
-    </div>    
-    
-      <div data-role="page" id="fourth">
-        <div data-theme="a" data-role="header">
-         <a href="#third" class="ui-btn-left">Back</a>
-            <h3>
-              Bone and joint score
-            </h3>
-           
-             <a href="#fifth" class="ui-btn-right">Next</a> 
-        </div>
-
-        <div data-role="content">
-
-        </div>
-
-        <div data-theme="a" data-role="footer" data-position="fixed">
-
-        </div>
-    </div>      
-    
-    <div data-role="page" id="fifth">
-        <div data-theme="a" data-role="header">
-        <a href="#fourth" class="ui-btn-left">Back</a>
-            <h3>
-              Co-morbid factors Influencing outcome
-            </h3>
-            
-        </div>
-
-        <div data-role="content">
-
-        </div>
-
-        <div data-theme="a" data-role="footer" data-position="fixed">
-
-        </div>
-    </div>      
+</div>
 </body>
-</html>   
+</html>    
