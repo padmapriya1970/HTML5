@@ -49,25 +49,29 @@
             });
 			
 			$('#exit').click(function() {
-              //window.close();
-			  //application.close();
-			 // close();
+              
 			  //$("#img").css("display","none");
-			  //navigator.app.backHistory();
-			  //alert('Exit is working');
-			  //navigator.app.exitApp();
-			//close_window();
-			
-			window.navigator.app.exitApp();
-			window.app.exitApp();
-			window.close();
-			window.exit();
-			navigator.app.exitApp();
-			app.exit();
-			app.exitApp();
-			exitApp();
-			close();
-			exit();
+			  
+			//alert('Exit is fired');
+			 bgExitHandler();
+			//document.body.close();
+			//window.onclose(this);
+			//window.close();
+			//window.closed(this);
+			//application.close();
+			//navigator.app.backHistory();
+			//navigator.app.exitApp();
+			//window.navigator.app.backHistory();
+			//window.navigator.app.exitApp();
+			//window.app.exitApp();
+			//window.close();
+			//window.exit();
+			//navigator.app.exitApp();
+			//app.exit();
+			//app.exitApp();
+			//exitApp();
+			//close();
+			//exit();
 			
 			
 		/*	var collapse_content_selector = $(this).attr('href');	
@@ -109,7 +113,13 @@
 		exit();
 		// BackButton.exitApp();
     	}
+		
+		
 	}
+	
+	function bgExitHandler(e) {
+    Enabler.exit('Background Exit');
+}
 </script>
     
    <!-- <syntaxhighlight lang="javascript">
@@ -324,7 +334,7 @@ JBJS 2006 : Volume 88-B, No.10, October 2006
         <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
               
         
-        <a id="exit" href="#"  class="ui-btn-left" > Exit </a>
+        <a id="exit" class="ui-btn-left" > Exit </a>
 
 			<table align="center">
             	<tr>
