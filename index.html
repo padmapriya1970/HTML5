@@ -9,121 +9,690 @@
 	<link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/simple-app.css">
+    
+    <script src="jquery-1.8.2.min.js"></script>
+    
+    <script>
+       $(document).on('pagebeforeshow', '#second', function(e, data){     
+    //alert("Skin Score  Value" + data.prevPage.find('#skin').val());
+});
+
+ /*$(document).on('pagebeforeshow', '#third', function(e, data){     
+    alert("Skin Score  Value  " + data.prevPage.find('#skinscore').val());
+});*/
+    
+
+</script>
+<script type="text/javascript">
+
+
+        $(document).ready(function() {
+			jQuery('body').css('overflow','hidden'); 
+			
+            $('#s1').click(function() {
+             $('#skinscore').val(1);
+			 $('#s1').css("cursor","pointer");
+			 
+            });
+			 $('#s2').click(function() {
+             $('#skinscore').val(2);
+            });
+			 $('#s3').click(function() {
+             $('#skinscore').val(3);
+            });
+			 $('#s4').click(function() {
+             $('#skinscore').val(4);
+            });
+			 $('#s5').click(function() {
+             $('#skinscore').val(5);
+            });
+            
+            
+            
+            $('#m1').click(function() {
+             $('#mtnscore').val(1);
+			 $('#m1').css("cursor","pointer");
+			 
+            });
+			 $('#m2').click(function() {
+             $('#mtnscore').val(2);
+            });
+			 $('#m3').click(function() {
+             $('#mtnscore').val(3);
+            });
+			 $('#m4').click(function() {
+             $('#mtnscore').val(4);
+            });
+			 $('#m5').click(function() {
+             $('#mtnscore').val(5);
+            });
+            
+            
+            
+            
+             $('#b1').click(function() {
+             $('#bjcore').val(1);
+			 $('#b1').css("cursor","pointer");
+			 
+            });
+			 $('#b2').click(function() {
+             $('#bjcore').val(2);
+            });
+			 $('#b3').click(function() {
+             $('#bjcore').val(3);
+            });
+			 $('#b4').click(function() {
+             $('#bjcore').val(4);
+            });
+			 $('#b5').click(function() {
+             $('#bjcore').val(5);
+            });
+            
+            
+            
+            
+            
+            
+			 $('#t').click(function() {
+				   $('#cmsscore').val(0);
+				 $("#skincore").val(0);
+				 $("#mtnscore").val(0);
+				  $("#bjcore").val(0);
+				   //$("input[type='checkbox']").removeAttr('checked');
+				   $("#UnCheckIt").click(function () {
+ 
+	$('input:checkbox[name=checkme]').attr('checked',false);
+ 
+    });	
+
+           
+            });
+			
+			
+			$('#exit').click(function() {
+              $('#cmsscore').val(0);
+			  //$("#img").css("display","none");
+			window.history.go(-1);
+			//alert('Exit is fired');
+			// bgExitHandler();
+			//document.body.close();
+			//window.onclose(this);
+			//window.close();
+			//window.closed(this);
+			//application.close();
+			//navigator.app.backHistory();
+			//navigator.app.exitApp();
+			//window.navigator.app.backHistory();
+			//window.navigator.app.exitApp();
+			//window.app.exitApp();
+			//window.close();
+			//window.exit();
+			//navigator.app.exitApp();
+			//app.exit();
+			//app.exitApp();
+			//exitApp();
+			//close();
+			//exit();
+			
+			
+		/*	var collapse_content_selector = $(this).attr('href');	
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Show');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Hide');
+			  }
+			});
+			*/
+		//	navigator.app.loadUrl('http://example.com');
+		//	window.location = 'http://example.com';
+		
+		/* //checkboxes.is.prop("checked",false);
+				  var checkboxes = $("input[type='checkbox']");
+				    
+				 //checkboxes.attr("data-type", "uncheck");
+				  //$('#myCheckbox').attr('checked', false);
+				  $('#chk1').attr('checked', false);
+//				  checkboxes.attr('checked', false);
+
+      
+            $('.clearbox').each(function() { //loop through each checkbox
+                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+            });*/
+		
+			
+			 });
+			 
+			
+			 $('.check:button').toggle(function(){
+        $('#chk1').attr('checked','checked');
+        $(this).val('uncheck all')
+    },function(){
+        $('input:checkbox').removeAttr('checked');
+        $(this).val('check all');        
+    })
+			
+			 
+			  
+			 $('#home').click(function() {
+				
+						
+				  $('#cmsscore').val(0);
+				 $("#skincore").val('0');
+				 $("#mtnscore").val('0');
+				  $("#bjcore").val('0');
+								 
+							
+				
+			 });
+			  $('#six').click(function() {
+				var cmsscorevalue= $("#cmsscore").val();
+				 var skincorevalue= $("#skinscore").val();
+				var mtnscorevalue= $("#mtnscore").val();
+			    var bjcorevalue= $("#bjcore").val();
+				 $("#skinscorevalue").val(skincorevalue);
+				 $("#mtnscorevalue").val(mtnscorevalue);
+				 $("#bjscorevalue").val(bjcorevalue);
+				 $("#cmsscorevalue").val(cmsscorevalue);
+				 
+				 var finaltotal = parseInt(skincorevalue)+parseInt(mtnscorevalue)+parseInt(bjcorevalue)+parseInt(cmsscorevalue)
+					$("#FinalScorevalue").val(finaltotal);
+  							
+				
+			 });
+			 
+			 
+			  
+			   var cms=0;
+			   var cms1=0;
+			   var total=0;
+			   
+			 $('#chk1').click(function(){
+        var isChecked = $('#chk1').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	   $('#chk2').click(function(){
+		   
+        var isChecked = $('#chk2').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  
+	  
+	  $('#chk3').click(function(){
+        var isChecked = $('#chk3').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  
+	  $('#chk4').click(function(){
+        var isChecked = $('#chk4').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  
+	  $('#chk5').click(function(){
+        var isChecked = $('#chk5').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  $('#chk6').click(function(){
+        var isChecked = $('#chk6').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+			
+			 $('#chk7').click(function(){
+        var isChecked = $('#chk7').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+			 	
+			
+        });     
+    </script>
+<script type="text/javascript">
+var checkflag = "false";
+function check(field) {
+  if (checkflag == "false") {
+    for (i = 0; i < field.length; i++) {
+      field[i].checked = true;
+    }
+    checkflag = "true";
+    return "Uncheck All";
+  } else {
+    for (i = 0; i < field.length; i++) {
+      field[i].checked = false;
+    }
+    checkflag = "false";
+    return "Check All";
+  }
+}
+
+</script>
+<script lang="javascript">
+	
+		
+    function close_window() {
+    if (confirm("Exit?")) {
+        //navigator.app.exitApp();
+		//window.close();
+		//app.exitApp();
+		//$(document).css("display","none");
+		//$('#second').css("display","none");
+		//void android.app.exit();
+		exit();
+		// BackButton.exitApp();
+    	}
+	
+	
+		
+		
+	}
+	
+	function bgExitHandler(e) {
+    Enabler.exit('Background Exit');
+}
+</script>
+
+<!-- <syntaxhighlight lang="javascript">
+navigator.app.backHistory();
+$('#exit').click(function() {
+navigator.app.exitApp();
+});
+</syntaxhighlight>-->
+
+<style type="text/css">
+.bgcolor {
+	background: rgb(235,233,249); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(235,233,249,1)), color-stop(50%, rgba(216,208,239,1)), color-stop(51%, rgba(206,199,236,1)), color-stop(100%, rgba(193,191,234,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=0 ); /* IE6-9 */
+}
+</style>
+<script>
+		$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+            $("#img").css("display","none");
+
+ 
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Show');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Hide');
+			  }
+			});
+		  });
+ 
+		});	
+		</script>
+<style>
+.round-border {
+	border: 1px solid #eee;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+.mainbg {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+tr {
+	cursor: pointer;
+}
+.bg {
+	background: url(bg3.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+input[type="text"], textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #FFF;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#262626), to(#333));
+	background-image: -webkit-linear-gradient(top, #262626, #333);
+	background-image: -moz-linear-gradient(top, #262626, #333);
+	background-image: -o-linear-gradient(top, #262626, #333);
+	background-image: linear-gradient(to bottom, #262626, #333);
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3) inset, 0px 1px 0px rgba(255, 255, 255, 0.2);
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 9px 10px;
+	
+	width: 100%;
+}
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function showBoxes(frm){
+   var message = "Your chose:\n\n"
+
+   //For each checkbox see if it has been checked, record the value.
+   for (i = 0; i < frm.cms.length; i++)
+      if (frm.Music[i].checked){
+         message = message + frm.Music[i].value + "\n"
+      }
+
+   //For each radio button if it is checked get the value and break.
+   for (var i = 0; i < frm.Performer.length; i++){
+      if (frm.Performer[i].checked){
+         message = message + "\n" + frm.Performer[i].value
+         break
+      }
+   }
+   alert(message)
+}
+
+//NOTE THE onClick="" empty event handlers in the checkbox and radio input fields below
+//are there to fix a bug in Netscape 2.0X. Placing an onClick handler in imput fields fixes
+//a bug where input objects inside tables are reflected more than once.
+
+//-->
+</SCRIPT>
+
+    
+    
+    
+    
+    
+    
+    
 </head>
 <body>
 	<div class="swiper-nav swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide"><span>Home</span></div>
-			<div class="swiper-slide"><span>About Us</span></div>
-			<div class="swiper-slide"><span>Gallery</span></div>
-			<div class="swiper-slide"><span>Services</span></div>
-			<div class="swiper-slide"><span>Contacts</span></div>
+			<div class="swiper-slide"><span>Skin Score</span></div>
+			<div class="swiper-slide"><span>MTN Score</span></div>
+			<div class="swiper-slide"><span>BJ Score</span></div>
+			<div class="swiper-slide"><span>CMS Score</span></div>
+          <div class="swiper-slide"><span></span></div>
 		</div>
 	</div>
-	<div class="swiper-pages swiper-container">
+	<div  style="background-color:#FFF; color:#000" class="swiper-pages swiper-container">
 		<div class="swiper-wrapper">
+         
 			<div class="swiper-slide">
+            <div>
+            	<table style="width:100%">
+                	<tr>
+                    	<td align="center" valign="middle" colspan="2" style="width:90%">
+                        <h3>Covering Tissues – Skin Score</h3>
+                        </td>
+                        <td style="width:10%">
+                          <input type="text"  readonly="true"  style="text-align:center;" value="0" id="skinscore"/>&nbsp;
+                        </td>
+                    </tr>
+                     <tr>
+              	<td colspan="3">
+                	<hr />
+                </td>
+              </tr>
+                     <tr>
+                     
+                <td align="center" valign="middle"> Example </td>
+                <td align="center" valign="middle"> Description </td>
+                <td align="center" valign="middle"> Score </td>
+              </tr>
+              <tr>
+              	<td colspan="3">
+                	<hr />
+                </td>
+              </tr>
+                </table>
+            </div>
 				<div class="swiper-container scroll-container">
 					<div class="swiper-scrollbar"></div>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
+                       
 							<div class="page-inner">
-								<h1>Home</h1>
-								<p>Hello, this is an example of simple Swiper-app with the following features:</p>
-								<ul>
-									<li>
-										<p>scrollable text pages (with Swiper scroll container) and scrollbar plugin</p>
-									</li>
-									<li>
-										<p>fluid scrollable navigation on the top (with Swiper free mode)</p>
-									</li>
-									<li>
-										<p>gallery page (with Swiper vertical mode)</p>
-									</li>
-									<li>
-										<p>fully responsive</p>
-									</li>
-								</ul>
+								
+								 <table class="bg" align="center">
+        <tr>
+          <td  valign="middle"><table width="100%">
+             
+              <tr  id="s1">
+                <td><img src="leg1ic.png" alt="skin1" /></td>
+                <td align="left" valign="top"><p style="cursor:pointer">Wounds without skin loss - Not over the fracture </p></td>
+                <td align="center" valign="top">&nbsp;
+                  <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>
+                  &nbsp;</td>
+              </tr>
+              <tr id="s2">
+                <td><img src="leg2ic.png" alt="skin2" /></td>
+                <td align="left" valign="top"><p style="cursor:pointer" >Wounds without skin loss - Exposing the fracture </p></td>
+                <td align="center" valign="top">&nbsp;
+                  <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="skin2"/>
+                  &nbsp;</td>
+              </tr>
+              <tr  id="s3">
+                <td><img src="leg3ic.png" alt="skin3" /></td>
+                <td align="left" valign="top"><p style="cursor:pointer">Wounds with skin loss - Not over the fracture </p></td>
+                <td align="center" valign="top">&nbsp;
+                  <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="skin3"/>
+                  &nbsp;</td>
+              </tr>
+              <tr id="s4">
+                <td><img src="leg4ic.png" alt="skin4" /></td>
+                <td align="left" valign="top"><p style="cursor:pointer">Wounds with skin loss - over the fracture </p></td>
+                <td align="center" valign="top">&nbsp;
+                  <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="skin4"/>
+                  &nbsp;</td>
+              </tr>
+              <tr id="s5">
+                <td><div align="justify"><img src="leg5ic.png" alt="skin5" /> </div></td>
+                <td align="left" valign="top"><p style="cursor:pointer" align="justify" >Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
+                <td align="center" valign="top"><div align="justify">&nbsp;
+                    <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
+                    &nbsp;</div></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+                			</div>
 			<div class="swiper-slide">
 				<div class="swiper-container scroll-container">
 					<div class="swiper-scrollbar"></div>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="page-inner">
-								<h1>About Us</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, aliquid dolor quidem harum hic dolore et temporibus quisquam alias ratione nisi ex laboriosam esse nesciunt neque sed quis deleniti maxime.</p>
-								<p>Omnis explicabo dicta cupiditate sed minus ipsa laborum aliquid nisi. Ad, consectetur, maiores, culpa quos aliquid atque saepe libero laborum facilis dignissimos consequuntur repellendus inventore totam alias fuga explicabo repudiandae.</p>
-								<p>Voluptatibus, est, dignissimos, blanditiis perspiciatis expedita totam reprehenderit voluptates quod impedit autem quam repudiandae iusto libero officia quo ad ullam voluptatum distinctio aperiam nulla dolorem! Cupiditate soluta aut aliquid ipsum!</p>
-								<p>Harum, facere, quisquam dignissimos dolorem a ex velit amet ad architecto quos adipisci labore sint nulla. Cum, veniam, molestias, excepturi amet consequuntur vel nobis sed minima officia architecto in vitae.</p>
-								<p>Iure, perferendis, porro error sint nisi quo libero laudantium repudiandae architecto sunt itaque accusamus ipsum quas voluptatum iusto modi facere culpa. Culpa, eaque nisi praesentium aspernatur natus distinctio ad nostrum.</p>
-								<p>Unde, tenetur porro atque eaque quae repellendus dignissimos doloremque neque quia nulla fugiat quis adipisci rem recusandae eos voluptatem sunt velit natus. Ipsam, facilis molestias animi laboriosam fuga repellat iste.</p>
-								<p>Consequuntur, cupiditate, fugiat similique repellat voluptates possimus saepe dolorum rem blanditiis illum! Ducimus, pariatur consequatur nobis neque deleniti quaerat omnis! Quaerat, inventore alias veniam vero repudiandae praesentium necessitatibus reprehenderit sit!</p>
-								<p>Illo, nam qui ipsum aperiam possimus similique eaque officia error consectetur omnis nostrum consequuntur dicta libero aspernatur repudiandae. Quos, odit nemo atque et id error excepturi inventore eum. Quia, sequi?</p>
-								<p>Nemo, doloribus, consectetur enim sunt cumque quia tenetur fugiat atque repellendus perferendis suscipit quasi ratione repellat deserunt in fuga iste. Et, nobis corporis nemo quo atque at neque consequatur tenetur?</p>
-								<p>Nisi, odit, quisquam recusandae aspernatur officia facilis saepe repellendus iusto minima maiores ratione sint nihil esse. Consequatur, alias, labore nam voluptate sequi doloremque nobis quisquam earum eligendi impedit eveniet dolore.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide">
-				<div class="swiper-container swiper-gallery">
-					<div class="swiper-scrollbar"></div>
-					<div class="swiper-wrapper">
-						<div class="swiper-slide"><img src="img/gallery-2.jpg" height="684" width="1024" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery-3.jpg" height="800" width="532" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery-4.jpg" height="800" width="532" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery-5.jpg" height="684" width="1024" alt=""></div>
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide">
-				<div class="swiper-container scroll-container">
-					<div class="swiper-scrollbar"></div>
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="page-inner">
-								<h1>Services</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, aliquid dolor quidem harum hic dolore et temporibus quisquam alias ratione nisi ex laboriosam esse nesciunt neque sed quis deleniti maxime.</p>
-								<p>Omnis explicabo dicta cupiditate sed minus ipsa laborum aliquid nisi. Ad, consectetur, maiores, culpa quos aliquid atque saepe libero laborum facilis dignissimos consequuntur repellendus inventore totam alias fuga explicabo repudiandae.</p>
-								<p>Voluptatibus, est, dignissimos, blanditiis perspiciatis expedita totam reprehenderit voluptates quod impedit autem quam repudiandae iusto libero officia quo ad ullam voluptatum distinctio aperiam nulla dolorem! Cupiditate soluta aut aliquid ipsum!</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, aliquid dolor quidem harum hic dolore et temporibus quisquam alias ratione nisi ex laboriosam esse nesciunt neque sed quis deleniti maxime.</p>
-								<p>Omnis explicabo dicta cupiditate sed minus ipsa laborum aliquid nisi. Ad, consectetur, maiores, culpa quos aliquid atque saepe libero laborum facilis dignissimos consequuntur repellendus inventore totam alias fuga explicabo repudiandae.</p>
-								<p>Voluptatibus, est, dignissimos, blanditiis perspiciatis expedita totam reprehenderit voluptates quod impedit autem quam repudiandae iusto libero officia quo ad ullam voluptatum distinctio aperiam nulla dolorem! Cupiditate soluta aut aliquid ipsum!</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide">
-				<div class="swiper-container scroll-container">
-					<div class="swiper-scrollbar"></div>
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="page-inner">
-								<h1>Contacts</h1>
-								<p>You can contact us using the following contacts form:</p>
-								<form action="">
-									<p><input type="text" name="first" placeholder="First Name..." id=""></p>	
-									<p><input type="text" name="last" placeholder="Last Name..." id=""></p>	
-									<p><input type="text" name="subject" placeholder="Subject..." id=""></p>	
-									<p><textarea name="message" placeholder="Your message..." cols="30" rows="10"></textarea></p>
-									<p><input type="submit" value="Send"></p>
-								</form>
+								<h1>Muscle, Tendon, Nerves</h1>
 								
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+            <div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="page-inner">
+								<h1>Bone and joint score</h1>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="page-inner">
+								<h1>Co-morbid factors influencing outcome</h1>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 	</div>
-	<script src="js/jquery.min.js"></script>
+    
+	
 	<!-- Don't forget to get the latest Swiper and scrollbar version here-->
 	<script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
