@@ -9,7 +9,7 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
     
     <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
-    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+   
     <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
     <!--AppFramework plugin for carousel -->
     <script type="text/javascript" charset="utf-8" src="appframework/plugins/af.carousel.js"></script>
@@ -100,16 +100,19 @@ function carouselSetup(){
     </style>    
 </head>
 <body> 
-<div id="afui">
+<div style="background-color:#FFF; color:#000">
 
-    <div id="content"> 
+    <div> 
         
     <!--Main Pages-->
-        <div class="panel" title="Home" id="home" data-footer="none" selected="true" style="overflow:hidden">
+        <div class="panel" data-footer="none" selected="true" style="overflow:hidden">
             <div id="carousel">
                 <div class="carousel_page">
+					
                     <h2>Page One</h2>
+                    <input style="color:#FFF" type="text" />
                     <p>Text and images for Page One goes here. Swipe to go to the next page.</p>
+                    
                 </div>
                 <div class="carousel_page">
                     <h2>Page Two</h2>
