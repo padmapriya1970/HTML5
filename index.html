@@ -1,133 +1,1142 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Carosuel App template</title>
-<!--
-    This template can be used for simple app with carousel slider, for creating applications similar to news app.
--->  
-    
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
-    
-    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
-    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
-    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
-    <!--AppFramework plugin for carousel -->
-    <script type="text/javascript" charset="utf-8" src="appframework/plugins/af.carousel.js"></script>
+    <title>Ganga Hospital Open Injury</title>
+     <meta name="viewport" content="widdiv=device-widdiv, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width">
+    <title>pag1</title>
+   <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="jquery.mobile-1.2.0.min.js"></script>
+    <script src="Jailor.js"></script>
 
-<!-- Required if packaging to native app using Intel XDK -->    
-    <script src="intelxdk.js"></script>
-    <script src="xhr.js"></script>
-    <script>    
-        function onDeviceReady(){ 
-            $.ui.launch();
-            intel.xdk.device.hideSplashScreen();
-        }
-        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
-    </script>
-<!-- end Intel XDK code -->
-    
     <script>
-
-$.ui.autoLaunch = false;
-$.ui.animateHeaders = false;       
-
-$(document).ready(function(){
-    $.ui.launch();
+       $(document).on('pagebeforeshow', '#second', function(e, data){     
+    //alert("Skin Score  Value" + data.prevPage.find('#skin').val());
 });
 
-$.ui.ready(function(){
-    carouselSetup();
-});        
-        
-function carouselSetup(){
-    // set size of carousel
-    $("#carousel").width($("#carousel").closest(".panel").width());
-    $("#carousel").height($("#carousel").closest(".panel").height()-25);
+ /*$(document).on('pagebeforeshow', '#third', function(e, data){     
+    alert("Skin Score  Value  " + data.prevPage.find('#skinscore').val());
+});*/
+    
 
-    var options={
-       vertical:false, // page up/down
-       horizontal:true, // page left/right
-       pagingDiv:"carousel_dots", // div to hold the dots for paging
-       pagingCssName:"carousel_paging", //classname for the paging dots
-       pagingCssNameSelected: "carousel_paging_selected", //classname for the selected page dots
-       wrap:true //Creates a continuous carousel
+</script>
+<script type="text/javascript">
+
+
+        $(document).ready(function() {
+			jQuery('body').css('overflow','hidden'); 
+			
+            $('#s1').click(function() {
+             $('#skinscore').val(1);
+			 $('#s1').css("cursor","pointer");
+			 
+            });
+			 $('#s2').click(function() {
+             $('#skinscore').val(2);
+            });
+			 $('#s3').click(function() {
+             $('#skinscore').val(3);
+            });
+			 $('#s4').click(function() {
+             $('#skinscore').val(4);
+            });
+			 $('#s5').click(function() {
+             $('#skinscore').val(5);
+            });
+            
+            
+            
+            $('#m1').click(function() {
+             $('#mtnscore').val(1);
+			 $('#m1').css("cursor","pointer");
+			 
+            });
+			 $('#m2').click(function() {
+             $('#mtnscore').val(2);
+            });
+			 $('#m3').click(function() {
+             $('#mtnscore').val(3);
+            });
+			 $('#m4').click(function() {
+             $('#mtnscore').val(4);
+            });
+			 $('#m5').click(function() {
+             $('#mtnscore').val(5);
+            });
+            
+            
+            
+            
+             $('#b1').click(function() {
+             $('#bjcore').val(1);
+			 $('#b1').css("cursor","pointer");
+			 
+            });
+			 $('#b2').click(function() {
+             $('#bjcore').val(2);
+            });
+			 $('#b3').click(function() {
+             $('#bjcore').val(3);
+            });
+			 $('#b4').click(function() {
+             $('#bjcore').val(4);
+            });
+			 $('#b5').click(function() {
+             $('#bjcore').val(5);
+            });
+            
+            
+            
+            
+            
+            
+			 $('#t').click(function() {
+				   $('#cmsscore').val(0);
+				 $("#skincore").val(0);
+				 $("#mtnscore").val(0);
+				  $("#bjcore").val(0);
+				   //$("input[type='checkbox']").removeAttr('checked');
+				   $("#UnCheckIt").click(function () {
+ 
+	$('input:checkbox[name=checkme]').attr('checked',false);
+ 
+    });	
+
+           
+            });
+			
+			
+			$('#exit').click(function() {
+              $('#cmsscore').val(0);
+			  //$("#img").css("display","none");
+			window.history.go(-1);
+			//alert('Exit is fired');
+			// bgExitHandler();
+			//document.body.close();
+			//window.onclose(this);
+			//window.close();
+			//window.closed(this);
+			//application.close();
+			//navigator.app.backHistory();
+			//navigator.app.exitApp();
+			//window.navigator.app.backHistory();
+			//window.navigator.app.exitApp();
+			//window.app.exitApp();
+			//window.close();
+			//window.exit();
+			//navigator.app.exitApp();
+			//app.exit();
+			//app.exitApp();
+			//exitApp();
+			//close();
+			//exit();
+			
+			
+		/*	var collapse_content_selector = $(this).attr('href');	
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Show');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Hide');
+			  }
+			});
+			*/
+		//	navigator.app.loadUrl('http://example.com');
+		//	window.location = 'http://example.com';
+		
+		/* //checkboxes.is.prop("checked",false);
+				  var checkboxes = $("input[type='checkbox']");
+				    
+				 //checkboxes.attr("data-type", "uncheck");
+				  //$('#myCheckbox').attr('checked', false);
+				  $('#chk1').attr('checked', false);
+//				  checkboxes.attr('checked', false);
+
+      
+            $('.clearbox').each(function() { //loop through each checkbox
+                this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+            });*/
+		
+			
+			 });
+			 
+			
+			 $('.check:button').toggle(function(){
+        $('#chk1').attr('checked','checked');
+        $(this).val('uncheck all')
+    },function(){
+        $('input:checkbox').removeAttr('checked');
+        $(this).val('check all');        
+    })
+			
+			 
+			  
+			 $('#home').click(function() {
+				
+						
+				  $('#cmsscore').val(0);
+				 $("#skincore").val('0');
+				 $("#mtnscore").val('0');
+				  $("#bjcore").val('0');
+								 
+							
+				
+			 });
+			  $('#six').click(function() {
+				var cmsscorevalue= $("#cmsscore").val();
+				 var skincorevalue= $("#skinscore").val();
+				var mtnscorevalue= $("#mtnscore").val();
+			    var bjcorevalue= $("#bjcore").val();
+				 $("#skinscorevalue").val(skincorevalue);
+				 $("#mtnscorevalue").val(mtnscorevalue);
+				 $("#bjscorevalue").val(bjcorevalue);
+				 $("#cmsscorevalue").val(cmsscorevalue);
+				 
+				 var finaltotal = parseInt(skincorevalue)+parseInt(mtnscorevalue)+parseInt(bjcorevalue)+parseInt(cmsscorevalue)
+					$("#FinalScorevalue").val(finaltotal);
+  							
+				
+			 });
+			 
+			 
+			  
+			   var cms=0;
+			   var cms1=0;
+			   var total=0;
+			   
+			 $('#chk1').click(function(){
+        var isChecked = $('#chk1').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	   $('#chk2').click(function(){
+		   
+        var isChecked = $('#chk2').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  
+	  
+	  $('#chk3').click(function(){
+        var isChecked = $('#chk3').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  
+	  $('#chk4').click(function(){
+        var isChecked = $('#chk4').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  
+	  $('#chk5').click(function(){
+        var isChecked = $('#chk5').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+	  
+	  $('#chk6').click(function(){
+        var isChecked = $('#chk6').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+			
+			 $('#chk7').click(function(){
+        var isChecked = $('#chk7').is(':checked');
+		var value = $("#cmsscore").val();
+        if(isChecked)
+		{
+		 var value = $("#cmsscore").val();
+		 cms=parseInt(value)+2;
+		 
+		  $('#cmsscore').val(cms);
+		
+         //$('p').html('Checkbox is checked: <b>True</b>');
+		 
+		}
+        else
+		{
+			 var value = $("#cmsscore").val();
+			 cms=parseInt(value)-parseInt('2');
+		 
+		 	 $('#cmsscore').val(cms);
+				
+		}
+		
+      });
+			 	
+			
+        });     
+    </script>
+    
+    
+    <script type="text/javascript">
+var checkflag = "false";
+function check(field) {
+  if (checkflag == "false") {
+    for (i = 0; i < field.length; i++) {
+      field[i].checked = true;
     }
-    var carousel = $("#carousel").carousel(options);
+    checkflag = "true";
+    return "Uncheck All";
+  } else {
+    for (i = 0; i < field.length; i++) {
+      field[i].checked = false;
+    }
+    checkflag = "false";
+    return "Check All";
+  }
 }
 
-    </script>
-    <style>
-        #carousel {
-            overflow:hidden;
-            margin:0 -10px;
-        }
-        
-        .carousel_page {
-            overflow: auto; 
-            -webkit-scrolling:touch;
-            padding:0 10px;
-        }
+</script>
+    
+    <script lang="javascript">
+	
+		
+    function close_window() {
+    if (confirm("Exit?")) {
+        //navigator.app.exitApp();
+		//window.close();
+		//app.exitApp();
+		//$(document).css("display","none");
+		//$('#second').css("display","none");
+		//void android.app.exit();
+		exit();
+		// BackButton.exitApp();
+    	}
+	
+	
+		
+		
+	}
+	
+	function bgExitHandler(e) {
+    Enabler.exit('Background Exit');
+}
+</script>
 
-        #carousel_dots {
-            text-align: center; 
-            margin-left: auto; 
-            margin-right: auto; 
-            clear: both;
+    
+   <!-- <syntaxhighlight lang="javascript">
+navigator.app.backHistory();
+$('#exit').click(function() {
+navigator.app.exitApp();
+});
+</syntaxhighlight>-->
+    
+    <style type="text/css">
+		.bgcolor
+		{
+			background: rgb(235,233,249); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(235,233,249,1)), color-stop(50%,rgba(216,208,239,1)), color-stop(51%,rgba(206,199,236,1)), color-stop(100%,rgba(193,191,234,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea',GradientType=0 ); /* IE6-9 */
 
-            position:relative;
-            top:0;
-            z-index:200;
-        }
-        
-        .carousel_paging {
-			border-radius: 10px;
-			background: #ccc;
-			width: 10px;
-			height: 10px;
-			display:inline-block;
 		}
+		
+						
+		
+	</style>
+    
+    
+    
+    <script>
+		$(document).ready(function() {
+		  $('.nav-toggle').click(function(){
+			//get collapse content selector
+			var collapse_content_selector = $(this).attr('href');					
+            $("#img").css("display","none");
 
-		.carousel_paging_selected {
-			border-radius: 10px;
-			background: #000;
-			width: 10px;
-			height: 10px;
-			display:inline-block;
+ 
+			//make the collapse content to be shown or hide
+			var toggle_switch = $(this);
+			$(collapse_content_selector).toggle(function(){
+			  if($(this).css('display')=='none'){
+                                //change the button label to be 'Show'
+				toggle_switch.html('Show');
+			  }else{
+                                //change the button label to be 'Hide'
+				toggle_switch.html('Hide');
+			  }
+			});
+		  });
+ 
+		});	
+		</script>
+        
+        
+		<style>	
+		.round-border {
+			border: 1px solid #eee;
+			border: 1px solid rgba(0, 0, 0, 0.05);
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			padding: 10px;
+			margin-bottom: 5px;
 		}
-        
-        #carousel h2 {
-            text-align: center;
-        }
-    </style>    
-</head>
-<body> 
-<div id="afui">
+		
+.mainbg	
+{
+	padding:0px;
+	margin:0px;
+	width:100%;
+	
+	
+	
+}
+tr
+{
+	cursor:pointer;
+}
+.bg
+{
+	background: url(bg3.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-    <div id="content"> 
+
+
+
+		</style>
         
-    <!--Main Pages-->
-        <div class="panel" title="Home" id="home" data-footer="none" selected="true" style="overflow:hidden">
-            <div id="carousel">
-                <div class="carousel_page">
-                    <h2>Page One</h2>
-                    <p>Text and images for Page One goes here. Swipe to go to the next page.</p>
-                </div>
-                <div class="carousel_page">
-                    <h2>Page Two</h2>
-                    <p>Text and images for Page Two goes here. Swipe to go to the next page.</p>
-                </div>
-                <div class="carousel_page">
-                    <h2>Page Three</h2>
-                    <p>Text and images for Page Three goes here. Swipe to go to the next page.</p>
-                </div>
-                <div class="carousel_page">
-                    <h2>Page Four</h2>
-                    <p>Text and images for Page Four goes here. Swipe to go to the next page.</p>
-                </div>
-            </div> 
-            <div id="carousel_dots"></div>
+        <SCRIPT LANGUAGE="JavaScript">
+<!--
+function showBoxes(frm){
+   var message = "Your chose:\n\n"
+
+   //For each checkbox see if it has been checked, record the value.
+   for (i = 0; i < frm.cms.length; i++)
+      if (frm.Music[i].checked){
+         message = message + frm.Music[i].value + "\n"
+      }
+
+   //For each radio button if it is checked get the value and break.
+   for (var i = 0; i < frm.Performer.length; i++){
+      if (frm.Performer[i].checked){
+         message = message + "\n" + frm.Performer[i].value
+         break
+      }
+   }
+   alert(message)
+}
+
+//NOTE THE onClick="" empty event handlers in the checkbox and radio input fields below
+//are there to fix a bug in Netscape 2.0X. Placing an onClick handler in imput fields fixes
+//a bug where input objects inside tables are reflected more than once.
+
+//-->
+</SCRIPT>
+        
+        
+      
+</head>	
+<body>
+<form name="myform" action="" method=post>
+
+    <div class="bg" data-role="page" id="index">
+    
+    <div style="width:100%;height:100%" id="top">
+    	<img id="img" href="#collapse1" class="nav-toggle" width="100%" style="cursor:pointer" height="100%" src="bj.png" />
+    </div>
+    <div id="collapse1" style="display:none;">
+        <div data-theme="b" data-role="header"  data-position="fixed" style="position:fixed">
+            <h3>
+                Ganga Hospital Open Injury
+            </h3>
+            <div align="center">Severity Score</div>
+            <div align="center">(GHOISS)</div>
+        </div>
+
+        <div data-role="content">
+            <a href="#second" data-role="button" id="change-page-button">Converting Tissue - Skin</a>
+            <input type="text" style="visibility:hidden;" value="1" id="skin"/>
+             <a href="#third" data-role="button" id="change-page-button">Muscle, Tendon, Nerves</a>
+            <input type="text"  style="visibility:hidden;" value="2" id="mtn"/>
+              <a href="#fourth" data-role="button" id="change-page-button">Bone and joint score</a>
+            <input type="text"  style="visibility:hidden;" value="3" id="bj"/>
+              <a href="#fifth" data-role="button" id="change-page-button">Co-morbid factors Influencing outcome</a>
+            <input type="text"  style="visibility:hidden;" value="4" id="cmf"/>
+        </div>
+
+        <div data-theme="b" data-role="footer" data-position="fixed" style="position:fixed">
+        <p style="text-align:center">Rjasekaran S, Dheenahdayalan j, Shetty A.P Sundararajan SR. Kumar M, Raja Sabapathy S</p>
+<p style="font-size:12px; text-align:center">		A Score for predicting salvage and outcome in Gusstillo type III-A & Type  III-B open tibial fractures. 
+JBJS 2006 : Volume 88-B, No.10, October 2006
+</p>
+        </div>
+        </div>
+    </div> 
+    <div class="bg" data-role="page"  id="second">
+        <div data-theme="a" data-role="header" data-position="fixed" style="position:fixed">
+            <a href="#index" class="ui-btn-left">Back</a>            
+           
+              <p align="center" style="text-align:center"> Converting Tissue - Skin</p>
+            
+            <a href="#third" class="ui-btn-right">Next</a>  
+                    
+        </div>
+
+        <div data-role="content" style="height:100%;overflow:scroll-y; overflow-style:marquee-line">
+            <table align="center">
+            	<tr>
+                	<td  valign="middle">
+                    	<table width="100%">
+                        <tr>
+                        	<td align="center" valign="middle">
+                            	Example
+                              </td>
+                            <td align="center" valign="middle">
+                            Description
+                            </td>
+                            <td align="center" valign="middle">
+                            Score
+                            </td>
+                            
+                        </tr>
+                        <tr  id="s1">
+                	<td>
+                    	<img src="leg1ic.png" alt="skin1" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Wounds without skin loss - Not over the fracture </p>
+                    </td>
+                    <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>&nbsp;</td>
+                </tr>
+                 <tr id="s2">
+                	<td>
+                    	<img src="leg2ic.png" alt="skin2" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer" >Wounds without skin loss - Exposing the fracture </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="skin2"/>&nbsp;</td>
+                    </tr> 
+                    <tr  id="s3">
+                	<td>
+                    	<img src="leg3ic.png" alt="skin3" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Wounds with skin loss - Not over the fracture </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="skin3"/>&nbsp;</td>
+                    </tr>  
+                    
+                     <tr id="s4">
+                	<td>
+                    	<img src="leg4ic.png" alt="skin4" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Wounds with skin loss - over the fracture </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="skin4"/>&nbsp;</td>
+                    </tr>  
+                     <tr id="s5">
+                	<td>
+                    	<div align="justify"><img src="leg5ic.png" alt="skin5" />
+                  	  </div></td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer" align="justify" >Circumferetial wound with skin loss -  Wound with Skin Loss </p>
+                    </td>
+                                         <td align="center" valign="top"><div align="justify">&nbsp; 
+                                         <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>&nbsp;</div></td>
+
+                    </tr>  
+
+
+                
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+
+              
+        
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
+              
+        
+        <a id="exit" class="ui-btn-left" > Exit </a>
+
+			<table align="center">
+            	<tr>
+                	<td>
+                    Score - &nbsp;
+                  
+                    </td>
+                    <td>
+                      <input type="text"  readonly="true"  style="width:100px; text-align:center" value="0" id="skinscore"/>&nbsp;
+                    </td>
+                    
+                </tr>
+            </table>
+         <a id="t" href="#index" class="ui-btn-right">Home</a> 
+
         </div>
     </div>
-</div>
+    <div class="bg" data-role="page" id="third">
+        <div data-theme="a" data-role="header" data-position="fixed" style="position:fixed">
+        <a href="#second" class="ui-btn-left">Back</a>
+           <p align="center" style="text-align:center">
+               Muscle, Tendon, Nerves
+            </p>
+            
+             <a href="#fourth" class="ui-btn-right">Next</a> 
+        </div>
+
+                <div data-role="content" style="height:100%;overflow:scroll-y; overflow-style:marquee-line">
+            <table align="center">
+            	<tr>
+                	<td  valign="middle">
+                    	<table width="100%">
+                        <tr>
+                        	<td align="center" valign="middle">
+                            	Example
+                              </td>
+                            <td align="center" valign="middle">
+                            Description
+                            </td>
+                            <td align="center" valign="middle">
+                            Score
+                            </td>
+                            
+                        </tr>
+                        <tr  id="m1">
+                	<td>
+                    	<img src="mtn/mtn1.png" alt="skin1" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Partial injury to MT unit </p>
+                    </td>
+                    <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="mtn1"/>&nbsp;</td>
+                </tr>
+                 <tr id="m2">
+                	<td>
+                    	<img src="mtn/mtn2.png" alt="skin2" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer" >Complete but Repairable injury to MT units </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="mtn2"/>&nbsp;</td>
+                    </tr> 
+                    <tr  id="m3">
+                	<td>
+                    	<img src="mtn/mtn3.png" alt="skin3" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Irreparable injury to MT units / partial loss of a compartment / complete injury to posterior tibial nerve     </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="mtn3"/>&nbsp;</td>
+                    </tr>  
+                    
+                     <tr id="m4">
+                	<td>
+                    	<img src="mtn/mnt4.png" alt="skin4" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Loss of one compartment of MT unit </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="mtn4"/>&nbsp;</td>
+                    </tr>  
+                     <tr id="m5">
+                	<td>
+                    	<div align="justify"><img src="mtn/mtn5.png" alt="skin5" />
+                  	  </div></td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer" align="justify" >Loss of more than one compartment  and       
+    Subtotal amputation</p>
+                    </td>
+                                         <td align="center" valign="top"><div align="justify">&nbsp; 
+                                         <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="mtn5"/>&nbsp;</div></td>
+
+                    </tr>  
+
+
+                
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+
+              
+        
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
+              
+        
+        <a id="exit" class="ui-btn-left" > Exit </a>
+
+			<table align="center">
+            	<tr>
+                	<td>
+                    Score - &nbsp;
+                  
+                    </td>
+                    <td>
+                      <input type="text"  readonly="true"  style="width:100px; text-align:center" value="0" id="mtnscore"/>&nbsp;
+                    </td>
+                    
+                </tr>
+            </table>
+         <a id="t" href="#index" class="ui-btn-right">Home</a> 
+
+        </div>
+
+    </div>    
+    
+      <div class="bg" data-role="page" id="fourth">
+        <div data-theme="a" data-role="header" data-position="fixed" style="position:fixed">
+         <a href="#third" class="ui-btn-left">Back</a>
+           <p align="center" style="text-align:center">
+              Bone and joint score
+            </p>
+           
+             <a href="#fifth" class="ui-btn-right">Next</a> 
+        </div>
+
+                <div data-role="content" style="height:100%;overflow:scroll-y; overflow-style:marquee-line">
+            <table align="center">
+            	<tr>
+                	<td  valign="middle">
+                    	<table width="100%">
+                        <tr>
+                        	<td align="center" valign="middle">
+                            	Example
+                              </td>
+                            <td align="center" valign="middle">
+                            Description
+                            </td>
+                            <td align="center" valign="middle">
+                            Score
+                            </td>
+                            
+                        </tr>
+                        <tr  id="b1">
+                	<td>
+                    	<img src="bj/bj1.png" alt="skin1" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Loss of more than one compartment  and       
+    Subtotal amputation </p>
+                    </td>
+                    <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="bj1"/>&nbsp;</td>
+                </tr>
+                 <tr id="b2">
+                	<td>
+                    	<img src="bj/bj2.png" alt="skin2" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer" >Large butterfly fragment >50% circumference</p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="bj2"/>&nbsp;</td>
+                    </tr> 
+                    <tr  id="b3">
+                	<td>
+                    	<img src="bj/bj.3.png" alt="skin3" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Periarticular/segmental without bone loss</p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="bj3"/>&nbsp;</td>
+                    </tr>  
+                    
+                     <tr id="b4">
+                	<td>
+                    	<img src="bj/bj4.png" alt="skin4" />
+                    </td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer">Bone loss < 4 cm</p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="bj4"/>&nbsp;</td>
+                    </tr>  
+                     <tr id="b5">
+                	<td>
+                    	<div align="justify"><img src="bj/bj5.png" alt="skin5" />
+                  	  </div></td>
+                    <td align="center" valign="top">
+                    <p style="cursor:pointer" align="justify" >Bone loss > 4 cm </p>
+                    </td>
+                                         <td align="center" valign="top"><div align="justify">&nbsp; 
+                                         <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="bj5"/>&nbsp;</div></td>
+
+                    </tr>  
+
+
+                
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+
+              
+        
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
+              
+        
+        <a id="exit" class="ui-btn-left" > Exit </a>
+
+			<table align="center">
+            	<tr>
+                	<td>
+                    Score - &nbsp;
+                  
+                    </td>
+                    <td>
+                      <input type="text"  readonly="true"  style="width:100px; text-align:center" value="0" id="bjcore"/>&nbsp;
+                    </td>
+                    
+                </tr>
+            </table>
+         <a id="t" href="#index" class="ui-btn-right">Home</a> 
+
+        </div>
+
+    </div>      
+    
+    <div class="bg" data-role="page" id="fifth">
+        <div  data-role="header" data-position="fixed" style="position:fixed">
+        	
+          <a href="#fourth" class="ui-btn-left">Back</a>                    	
+                
+            <p align="center" style="text-align:center"> Co-morbid factors Influencing <br> outcome</p>                 
+                    
+            <a id="six" href="#six" class="ui-btn-right">Next</a>  
+               
+            
+        </div>
+
+        <div data-role="content" style="height:100%;overflow:scroll-y; overflow-style:marquee-line">
+     <!--   <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup">
+	   <legend>Agree to the terms:</legend>
+	   <input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+	   <label for="checkbox-2">I agree</label>
+    </fieldset>
+</div>-->
+
+
+
+        <table align="center">
+            	<tr>
+                	<td  valign="middle">
+                    
+        	<table width="100%">
+            	<tr>
+                	<td>
+                    	
+                       <input id="chk1" class="clearbox"  type="checkbox" name="cms"> 
+           <label for="chk1">Injury debridement interval more than 12 hours
+</label>
+                        				                  	
+                    </td>
+                </tr>
+                <tr>
+                	<td>
+					<input id="chk2" class="clearbox" name="cms" type="checkbox"> 
+                               <label for="chk2">Sewage contamination/ farmyard injuries</label>
+                    	
+                    </td>
+                </tr>
+                <tr>
+                	<td>
+					<input id="chk3" class="clearbox" name="cms" type="checkbox"> 
+                               <label for="chk3">Age more than 65 years
+</label>
+                    	
+                    </td>
+                </tr>
+                <tr>
+                	<td>
+					<input id="chk4" class="clearbox" name="cms" type="checkbox"> 
+                               <label for="chk4">Debilitating diseases (DM,COPD,IHD)
+
+</label>           	
+                    </td>
+                </tr>
+                <tr>
+                	<td>
+					<input id="chk5" class="clearbox" name="cms" type="checkbox"> 
+                               <label for="chk5">Polytrauma ISS > 25  / Fat embolism
+
+
+</label>           	
+                    	
+                    </td>
+                </tr>
+                 <tr>
+                	<td>
+					<input id="chk6" class="clearbox" name="cms" type="checkbox"> 
+                               <label for="chk6">Shock at presentation (systolic <90)</label>           	
+                    </td>
+                </tr>
+                <tr>
+                	<td>
+					<input id="chk7" class="clearbox" name="cms" type="checkbox"> 
+                               <label for="chk7">Another injury to the same limb/compartment syndrome
+</label>          
+                    </td>
+                </tr>
+            </table>
+              </td>
+              </tr>
+              </table>
+           
+
+
+        </div>
+
+         <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
+              
+        
+        <a  href="#index" class="ui-btn-left" > Exit </a>
+
+			<table align="center">
+            	<tr>
+                	<td>
+                    Score - &nbsp;
+                  
+                    </td>
+                    <td>
+                      <input type="text"  readonly="true"  style="width:100px; text-align:center" value="0" id="cmsscore"/>&nbsp;
+                      
+
+
+          
+
+
+
+
+
+
+                    </td>
+                    
+                </tr>
+            </table>
+           
+
+         <a id="t" href="#index" class="ui-btn-right">Home</a> 
+
+        </div>
+     
+    </div>   
+    
+     <div class="bg" data-role="page" id="six">
+        <div data-theme="a" data-role="header" data-position="fixed" style="position:fixed">
+         <a href="#fifth" class="ui-btn-left">Back</a>
+           <p align="center" style="text-align:center">
+              Final Score Board
+            </p>
+          
+
+        </div>
+
+                <div data-role="content" style="height:100%;overflow:scroll-y; overflow-style:marquee-line">
+            <table align="center">
+            	<tr>
+                	<td  valign="middle">
+                    	<table width="100%">
+                        
+                        <tr>
+                	
+                    <td align="center" valign="top">
+                    <p>Covering Tissues  Skin  Score</p>
+                    </td>
+                    <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="skinscorevalue"/>&nbsp;</td>
+                </tr>
+                 <tr >
+                	
+                    <td align="center" valign="top">
+                    <p>Muscle, Tendon, Nerves Score </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center"  value="0" id="mtnscorevalue"/>&nbsp;</td>
+                    </tr> 
+                    <tr>
+                	
+                    <td align="center" valign="top">
+                    <p>Bone and Joint score </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="bjscorevalue"/>&nbsp;</td>
+                    </tr>  
+                    
+                     <tr>
+                	
+                    <td align="center" valign="top">
+                    <p>Co-morbid factors influencing outcome </p>
+                    </td>
+                     <td align="center" valign="top">&nbsp; <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="cmsscorevalue"/>&nbsp;
+                     <br />
+                      
+                     </td>
+                    </tr>  
+                  
+                
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+
+              
+        
+        </div>
+
+        <div data-theme="a" data-role="footer" data-position="fixed" style="position:fixed">
+              
+        
+        <a id="exit" class="check" class="ui-btn-left" > Exit </a>
+
+			<table align="center">
+            	<tr>
+                	<td>
+                  Final  Score - &nbsp;
+                  
+                    </td>
+                    <td>
+                      <input type="text"  readonly="true"  style="width:100px; text-align:center" value="0" id="FinalScorevalue"/>&nbsp;
+                     
+                     
+
+                    </td>
+                    
+                </tr>
+            </table>
+         <a id="t" href="#index" class="ui-btn-right">Home</a> 
+
+        </div>
+
+    </div>
+    </form>         
 </body>
-</html>    
+</html>   
