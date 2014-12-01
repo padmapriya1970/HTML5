@@ -470,8 +470,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 			  }
 			});
 		  });
+		  
+		   $('#img').click(function(){
+			   
+			   $("#img").css("display","none");
+			   
+			  			   
+		   });
+		  
  
 		});	
+		
 		</script>
 <style>
 .round-border {
@@ -487,6 +496,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 	padding: 0px;
 	margin: 0px;
 	width: 100%;
+
 }
 tr {
 	cursor: pointer;
@@ -554,7 +564,11 @@ function showBoxes(frm){
     
 </head>
 <body>
-	<div class="swiper-nav swiper-container">
+
+
+<div id="show">
+<div style="width:100%;height:100%"> <img id="img" width="100%" style="cursor:pointer" height="100%" src="bj.png" /> </div>
+	<div  class="swiper-nav swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide"><span>Skin Score</span></div>
 			<div class="swiper-slide"><span>MTN Score</span></div>
@@ -993,11 +1007,12 @@ function showBoxes(frm){
 			</div>
 			
 	</div>
-    
+    </div>
 	
 	<!-- Don't forget to get the latest Swiper and scrollbar version here-->
 	<script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
 	<script src="js/simple-app.js"></script>
+    
 </body>
 </html>
