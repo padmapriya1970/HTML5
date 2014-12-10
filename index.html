@@ -565,12 +565,14 @@ function showBoxes(frm){
 <div style="width:100%;height:100%"> <img id="img" width="100%" style="cursor:pointer" height="100%" src="bj.png" /> </div>
 
 <div  class="swiper-nav swiper-container">
+	<div align="center" style="font-weight:bolder; text-decoration:underline">Ganga Hospital Score</div>
   <div class="swiper-wrapper">
     <div class="swiper-slide"><span>Skin Score</span></div>
     <div class="swiper-slide"><span>MTN Score</span></div>
     <div class="swiper-slide"><span>BJ Score</span></div>
     <div class="swiper-slide"><span>CMS Score</span></div>
     <div class="swiper-slide"><span>Final Score</span></div>
+    
   </div>
 </div>
 <div  style="background-color:#FFF; color:#000" class="swiper-pages swiper-container">
@@ -579,7 +581,7 @@ function showBoxes(frm){
       <div>
         <table style="width:100%">
           <tr>
-            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Covering Tissues – Skin Score</h3></td>
+            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Covering Tissues (skin and fascia) Score</h3></td>
             <td style="width:10%"><input type="text"  readonly="true"  style="text-align:center;" value="0" id="skinscore"/>
               &nbsp; </td>
           </tr>
@@ -615,42 +617,62 @@ function showBoxes(frm){
                         <img src="leg1ic.png" alt="skin1" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Wounds without skin loss - Not over the fracture </p></td>
+                        <td align="left" valign="top">
+                        <p style="cursor:pointer; text-align:justify">Wounds not present over the bone, which have adequate soft tissue bed and can be sutured without tension.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="s2">
-                        <td><img src="leg2ic.png" alt="skin2" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" >Wounds without skin loss - Exposing the fracture </p></td>
+                        <td>
+                         <a href="leg2b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="leg2ic.png" alt="skin2" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify" >Wounds not present over the bone but with primary skin loss or requiring excision of skin during debridement, requiring skin grafting only, wound not affecting the choice of fixation of the bone.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="skin2"/>
                           &nbsp;</td>
                       </tr>
                       <tr  id="s3">
-                        <td><img src="leg3ic.png" alt="skin3" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Wounds with skin loss - Not over the fracture </p></td>
+                        <td>
+                         <a href="leg3b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="leg3ic.png" alt="skin3" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Wounds situated over the bone and directly exposing the skeleton but without skin loss either by injury or during debridement, could be sutured primarily or secondarily, choice of bony stabilization had to be frequently modified.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="skin3"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="s4">
-                        <td><img src="leg4ic.png" alt="skin4" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Wounds with skin loss - over the fracture </p></td>
+                        <td>
+                         <a href="leg4b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="leg4ic.png" alt="skin4" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Wounds with primary skin loss and exposing the bone or which require extensive debridement of skin due to friction burns or degloving, demanded specialized plastic surgical skills at the earliest.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="skin4"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="s5">
-                        <td><div align="justify"><img src="leg5ic.png" alt="skin5" /> </div></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" align="justify" >Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
+                        <td>
+                          <a href="leg5b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="leg5ic.png" alt="skin5" /> 
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer" align="justify" > Wounds involving skin loss over the entire circumference of the limb, extensive degloving often present, pose problem in soft tissue reconstruction, huge time is lost, bony reconstruction is often dictated by soft tissue reconstruction. </p></td>
                         <td align="center" valign="top"><div align="justify">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
                             &nbsp;</div></td>
                       </tr>
                       <tr id="s6" style="visibility:hidden">
                         <td><div align="justify"><img src="leg5ic.png" alt="skin5" /> </div></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" align="justify" >Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer" align="justify">Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
                         <td align="center" valign="top"><div align="justify">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
                             &nbsp;</div></td>
@@ -667,7 +689,7 @@ function showBoxes(frm){
       <div>
         <table style="width:100%">
           <tr>
-            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Muscle, Tendon, Nerves</h3></td>
+            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Functional tissues (Musculo – Tendinous and Nerve units )</h3></td>
             <td style="width:10%"><input type="text"  readonly="true"  style="text-align:center" value="0" id="mtnscore"/>
               &nbsp; </td>
           </tr>
@@ -693,37 +715,62 @@ function showBoxes(frm){
                 <tr>
                   <td><table width="100%">
                       <tr  id="m1">
-                        <td><img src="mtn/mtn1.png" alt="skin1" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Partial injury to MT unit </p></td>
+                        <td>
+                         <a href="mtn/mtn1b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="mtn/mtn1.png" alt="skin1" />
+                        </a>
+                        
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer">Exposure of MT units without direct damage. </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="mtn1"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="m2">
-                        <td><img src="mtn/mtn2.png" alt="skin2" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" >Complete but Repairable injury to MT units </p></td>
+                        <td>
+                         <a href="mtn/mtn2b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="mtn/mtn2.png" alt="skin2" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer" >Repairable injury to MT unit.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="mtn2"/>
                           &nbsp;</td>
                       </tr>
                       <tr  id="m3">
-                        <td><img src="mtn/mtn3.png" alt="skin3" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Irreparable injury to MT units / partial loss of a compartment / complete injury to posterior tibial nerve </p></td>
+                        <td>
+                         <a href="mtn/mtn3b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="mtn/mtn3.png" alt="skin3" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer">Crushing with loss or irreparable damage to MT unit/repairable injury to a nerve.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="mtn3"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="m4">
-                        <td><img src="mtn/mnt4.png" alt="skin4" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Loss of one compartment of MT unit </p></td>
+                        <td>
+                        <a href="mtn/mnt4b.png"
+                         target="_self" class="inline-block litebox">
+<img src="mtn/mnt4.png" alt="skin4" />
+</a>
+</td>
+                        <td align="left" valign="top"><p style="cursor:pointer">Loss of one compartment of MT unit / Irreparable injury to a nerve.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="mtn4"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="m5">
-                        <td><div align="justify"><img src="mtn/mtn5.png" alt="skin5" /> </div></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" align="justify" >Loss of more than one compartment  and       
-                            Subtotal amputation</p></td>
+                        <td>
+                        <a href="mtn/mtn5b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="mtn/mtn5.png" alt="skin5" /> 
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer" align="justify">	Loss of two or more compartment / subtotal amputation.</p></td>
                         <td align="center" valign="top"><div align="justify">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="mtn5"/>
                             &nbsp;</div></td>
@@ -746,7 +793,7 @@ function showBoxes(frm){
     <div class="swiper-slide">
       <table  style="width:100%">
         <tr>
-          <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Bone and joint score</h3></td>
+          <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Skeletal Structures (Bone and Joints)</h3></td>
           <td style="width:10%"><input type="text"  readonly="true"  style="text-align:center" value="0" id="bjcore"/>
             &nbsp; </td>
         </tr>
@@ -776,37 +823,56 @@ function showBoxes(frm){
                         <td align="center" valign="middle"> Score </td>
                       </tr>
                       <tr  id="b1">
-                        <td><img src="bj/bj1.png" alt="skin1" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Transverse /oblique/butterfly fragment 
-   < 50% circumference                              </p></td>
+                        <td>
+                        <a href="bj/bj1b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="bj/bj1.png" alt="skin1" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Transverse or oblique fractures with minimal Periosteal stripping.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="bj1"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="b2">
-                        <td><img src="bj/bj2.png" alt="skin2" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" >Large butterfly fragment >50% circumference</p></td>
+                        <td>
+                        <a href="bj/bj2b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="bj/bj2.png" alt="skin2" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Presence of unicortical comminution</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="bj2"/>
                           &nbsp;</td>
                       </tr>
                       <tr  id="b3">
-                        <td><img src="bj/bj.3.png" alt="skin3" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Periarticular/segmental without bone loss</p></td>
+                        <td>
+                         <a href="bj/bj.3b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="bj/bj.3.png" alt="skin3" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Extensive periarticlular comminution with joint disorganization.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="bj3"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="b4">
-                        <td><img src="bj/bj4.png" alt="skin4" /></td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Bone loss < 4 cm</p></td>
+                        <td>
+                         <a href="bj/bj4b.png"
+                         target="_self" class="inline-block litebox">
+                        <img src="bj/bj4.png" alt="skin4" />
+                        </a>
+                        </td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Circumferential comminution of bone with or without bone loss of less than 4 cm.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="bj4"/>
                           &nbsp;</td>
                       </tr>
                       <tr id="b5">
                         <td><div align="justify"><img src="bj/bj5.png" alt="skin5" /> </div></td>
-                        <td align="center" valign="top"><p style="cursor:pointer" align="justify" >Bone loss > 4 cm </p></td>
+                        <td align="center" valign="top"><p style="cursor:pointer" align="justify" >5.	Comminuted or segmental fractures with primary or secondary bone loss of more than 4 cm.</p></td>
                         <td align="center" valign="top"><div align="justify">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="bj5"/>
                             &nbsp;</div></td>
@@ -830,7 +896,7 @@ function showBoxes(frm){
       <div>
         <table style="width:100%">
           <tr>
-            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Co-morbid factors influencing outcome</h3>
+            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Co-morbid factors influencing outcome(Two points each)</h3>
              
               </td>
             <td style="width:10%"><input type="text"  readonly="true"  style="text-align:center" value="0" id="cmsscore"/>
@@ -860,7 +926,7 @@ function showBoxes(frm){
                         <td>
                        
                         <input id="chk1" class="clearbox"  type="checkbox" name="cms"> &nbsp;
-                          <label for="chk1">Injury debridement interval more than 12 hours </label>
+                          <label for="chk1">Delayed presentation (>12 hrs) </label>
                        
                           </td>						
                       </tr>
@@ -874,7 +940,7 @@ function showBoxes(frm){
                         
                         <input id="chk2" class="clearbox" name="cms" type="checkbox">
                         &nbsp;
-                          <label for="chk2">Sewage contamination/ farmyard injuries</label> <br /></td>
+                          <label for="chk2">Sewage or organic contamination / farmyard injuries.</label> <br /></td>
                       </tr>
                       <tr>
                       	<td>&nbsp;
@@ -884,7 +950,7 @@ function showBoxes(frm){
                       <tr>
                         <td><input id="chk3" class="clearbox" name="cms" type="checkbox">
                         &nbsp;
-                          <label for="chk3">Age more than 65 years </label></td>
+                          <label for="chk3">Debilitating diseases (uncontrolled DM., cardio respiratory diseases.)</label></td>
                       </tr>
                       <tr>
                       	<td>&nbsp;
@@ -894,7 +960,7 @@ function showBoxes(frm){
                       <tr>
                         <td><input id="chk4" class="clearbox" name="cms" type="checkbox">
                         &nbsp;
-                          <label for="chk4">Debilitating diseases (DM,COPD,IHD) </label></td>
+                          <label for="chk4">Age > 65 years </label></td>
                       </tr>
                       <tr>
                       	<td>&nbsp;
@@ -904,7 +970,7 @@ function showBoxes(frm){
                       <tr>
                         <td><input id="chk5" class="clearbox" name="cms" type="checkbox">
                         &nbsp;
-                          <label for="chk5">Polytrauma ISS > 25  / Fat embolism </label></td>
+                          <label for="chk5">Associated systemic injuries(polytrauma involving abdominal or chest injuries, ISS >25)</label></td>
                       </tr>
                       <tr>
                       	<td>&nbsp;
@@ -914,7 +980,7 @@ function showBoxes(frm){
                       <tr>
                         <td><input id="chk6" class="clearbox" name="cms" type="checkbox">
                         &nbsp;
-                          <label for="chk6">Shock at presentation (systolic <90)</label></td>
+                          <label for="chk6">Fat embolism</label></td>
                       </tr>
                       <tr>
                       	<td>&nbsp;
@@ -924,7 +990,7 @@ function showBoxes(frm){
                       <tr>
                         <td><input id="chk7" class="clearbox" name="cms" type="checkbox">
                         &nbsp;
-                          <label for="chk7">Another injury to the same limb/compartment syndrome </label></td>
+                          <label for="chk7">Another major injury to the same limb / compartment syndrome </label></td>
                       </tr>
                     </table></td>
                 </tr>
@@ -958,37 +1024,48 @@ function showBoxes(frm){
             <div class="page-inner">
               <table style=" width:100%; height:100%" align="center">
                 <tr>
-                  <td><table width="100%">
+                  <td align="center" valign="middle">
+                  <table align="center">
                       <tr>
-                        <td align="center" valign="top"><p>Covering Tissues  Skin  Score</p></td>
+                        <td align="left" valign="top"><p>Covering Tissues  Skin  Score</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="skinscorevalue"/>
                           &nbsp;</td>
                       </tr>
                       <tr >
-                        <td align="center" valign="top"><p>Muscle, Tendon, Nerves Score </p></td>
+                        <td align="left" valign="top"><p>Muscle, Tendon, Nerves Score </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center"  value="0" id="mtnscorevalue"/>
                           &nbsp;</td>
                       </tr>
                       <tr>
-                        <td align="center" valign="top"><p>Bone and Joint score </p></td>
+                        <td align="left" valign="top"><p>Bone and Joint score </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="bjscorevalue"/>
                           &nbsp;</td>
                       </tr>
                       <tr>
-                        <td align="center" valign="top"><p>Co-morbid factors influencing outcome </p></td>
+                        <td align="left" valign="top"><p>Co-morbid factors influencing outcome </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="cmsscorevalue"/>
                           &nbsp; <br /></td>
                       </tr>
                       <tr>
-                        <td colspan="2"><button id="six" style="width:100px; height:30px;"> Calculate</button></td>
+                        <td align="center" colspan="2">
+                        
+                        <img id="six" src="img/button1.png" />
+                        <br>
+                        <br>
+                        <br>
+                       <!-- <button  style="width:100px; height:30px;"> Calculate</button> -->
+                       </td>
                       </tr>
                     </table></td>
                 </tr>
               </table>
+              <div><hr></div>
+              <div align="center"><img src="FinalScore.png" /></div>
+              <div><hr></div>
             </div>
           </div>
         </div>
