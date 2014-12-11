@@ -197,7 +197,8 @@
 				 $("#cmsscorevalue").val(cmsscorevalue);
 				 
 				 var finaltotal = parseInt(skincorevalue)+parseInt(mtnscorevalue)+parseInt(bjcorevalue)+parseInt(cmsscorevalue)
-					$("#FinalScorevalue").val(finaltotal);
+					$("#FinalScorevalue").html(finaltotal);
+					$("label[for='myalue']").html(finaltotal);
   							
 				
 			 });
@@ -481,8 +482,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 		</script>
 <style>
 .round-border {
-	border: 1px solid #eee;
-	border: 1px solid rgba(0, 0, 0, 0.05);
+	border: 1px solid #000;*/
+	/*border: 1px solid #eee(0, 0, 0, 0.05);*/
+
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -496,7 +498,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', end
 }
 tr {
 	cursor: pointer;
+	padding:5px;
 }
+
 .bg {
 	background: url(bg3.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -508,18 +512,25 @@ input[type="text"], textarea {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #FFF;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#262626), to(#333));
-	background-image: -webkit-linear-gradient(top, #262626, #333);
-	background-image: -moz-linear-gradient(top, #262626, #333);
-	background-image: -o-linear-gradient(top, #262626, #333);
-	background-image: linear-gradient(to bottom, #262626, #333);
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3) inset, 0px 1px 0px rgba(255, 255, 255, 0.2);
 	border: 1px solid #000;
 	border-radius: 5px;
 	padding: 9px 10px;
 	width: 100%;
 }
+.border
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3) inset, 0px 1px 0px rgba(255, 255, 255, 0.2);
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 9px 10px;
+	width: 100%;
+}
+
+
 </style>
 <SCRIPT LANGUAGE="JavaScript">
 <!--
@@ -567,10 +578,10 @@ function showBoxes(frm){
 <div  class="swiper-nav swiper-container">
 	<div align="center" style="font-weight:bolder; text-decoration:underline">Ganga Hospital Score</div>
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><span>Skin Score</span></div>
-    <div class="swiper-slide"><span>MTN Score</span></div>
-    <div class="swiper-slide"><span>BJ Score</span></div>
-    <div class="swiper-slide"><span>CMS Score</span></div>
+    <div class="swiper-slide"><span>Covering Tissues</span></div>
+    <div class="swiper-slide"><span>Musculo-Tendinous,Nerve</span></div>
+    <div class="swiper-slide"><span>Bone and Joints</span></div>
+    <div class="swiper-slide"><span>Co-morbid Factors</span></div>
     <div class="swiper-slide"><span>Final Score</span></div>
     
   </div>
@@ -589,7 +600,7 @@ function showBoxes(frm){
             <td colspan="3"><hr /></td>
           </tr>
           <tr>
-            <td align="center" valign="middle"> Example </td>
+            <td align="left" style="padding-left:20px" valign="middle"> Example </td>
             <td align="center" valign="middle"> Description </td>
             <td align="center" valign="middle"> Score </td>
           </tr>
@@ -609,70 +620,88 @@ function showBoxes(frm){
             
               <table align="center">
                 <tr>
-                  <td><table width="100%">
-                      <tr  id="s1">
-                        <td>
+                  <td><table  width="100%">
+                      <tr class="border" id="s1">
+                        <td >
                         <a href="leg1b.png"
                          target="_self" class="inline-block litebox">
                         <img src="leg1ic.png" alt="skin1" />
                         </a>
                         </td>
                         <td align="left" valign="top">
-                        <p style="cursor:pointer; text-align:justify">Wounds not present over the bone, which have adequate soft tissue bed and can be sutured without tension.</p></td>
+                        <p style="cursor:pointer; text-align:justify; margin:0; padding-top::0; padding-left:10px; padding-right:10px;">
+                        <label for="rbtnskin1">Wounds not present over the bone, which have adequate soft tissue bed and can be sutured without tension.</label> </p>
+
+                        </td>
                         <td align="center" valign="top">&nbsp;
-                          <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>
-                          &nbsp;</td>
+                          <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="skin1"/>                         
+                          &nbsp;
+                          <br>
+							<input id="rbtnskin1" type="radio" name="skinradio">
+                          </td>
                       </tr>
-                      <tr id="s2">
+                      <tr class="border" id="s2">
                         <td>
                          <a href="leg2b.png"
                          target="_self" class="inline-block litebox">
                         <img src="leg2ic.png" alt="skin2" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify" >Wounds not present over the bone but with primary skin loss or requiring excision of skin during debridement, requiring skin grafting only, wound not affecting the choice of fixation of the bone.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify; margin:0; padding:0;padding-left:10px; padding-right:10px;" > <label for="rbtnskin2">Wounds not present over the bone but with primary skin loss or requiring excision of skin during debridement, requiring skin grafting only, wound not affecting the choice of fixation of the bone</label>.</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="skin2"/>
-                          &nbsp;</td>
+                          &nbsp;
+                         <br>
+							<input id="rbtnskin2" type="radio" name="skinradio">
+                          </td>
                       </tr>
-                      <tr  id="s3">
+                      <tr class="border"  id="s3">
                         <td>
                          <a href="leg3b.png"
                          target="_self" class="inline-block litebox">
                         <img src="leg3ic.png" alt="skin3" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Wounds situated over the bone and directly exposing the skeleton but without skin loss either by injury or during debridement, could be sutured primarily or secondarily, choice of bony stabilization had to be frequently modified.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify; margin:0; padding:0;padding-left:10px; padding-right:10px;"> <label for="rbtnskin1">Wounds situated over the bone and directly exposing the skeleton but without skin loss either by injury or during debridement, could be sutured primarily or secondarily, choice of bony stabilization had to be frequently modified.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="skin3"/>
-                          &nbsp;</td>
+                          &nbsp;
+                          <br>
+							<input id="rbtnskin3" type="radio" name="skinradio">
+                          </td>
                       </tr>
-                      <tr id="s4">
+                      <tr class="border" id="s4">
                         <td>
                          <a href="leg4b.png"
                          target="_self" class="inline-block litebox">
                         <img src="leg4ic.png" alt="skin4" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Wounds with primary skin loss and exposing the bone or which require extensive debridement of skin due to friction burns or degloving, demanded specialized plastic surgical skills at the earliest.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify; margin:0; padding:0;padding-left:10px; padding-right:10px;"> <label for="rbtnskin4">Wounds with primary skin loss and exposing the bone or which require extensive debridement of skin due to friction burns or degloving, demanded specialized plastic surgical skills at the earliest.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="skin4"/>
-                          &nbsp;</td>
+                          &nbsp;
+                          <br>
+							<input id="rbtnskin4" type="radio" name="skinradio">
+                          </td>
                       </tr>
-                      <tr id="s5">
+                      <tr class="border" id="s5">
                         <td>
                           <a href="leg5b.png"
                          target="_self" class="inline-block litebox">
                         <img src="leg5ic.png" alt="skin5" /> 
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer" align="justify" > Wounds involving skin loss over the entire circumference of the limb, extensive degloving often present, pose problem in soft tissue reconstruction, huge time is lost, bony reconstruction is often dictated by soft tissue reconstruction. </p></td>
-                        <td align="center" valign="top"><div align="justify">&nbsp;
+                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0;padding-left:10px; padding-right:10px;" > <label for="rbtnskin5">Wounds involving skin loss over the entire circumference of the limb, extensive degloving often present, pose problem in soft tissue reconstruction, huge time is lost, bony reconstruction is often dictated by soft tissue reconstruction.</label></p></td>
+                        <td align="center" valign="top">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
-                            &nbsp;</div></td>
+                            &nbsp;
+                            <br>
+							<input id="rbtnskin5" type="radio" name="skinradio">
+                            </td>
                       </tr>
                       <tr id="s6" style="visibility:hidden">
                         <td><div align="justify"><img src="leg5ic.png" alt="skin5" /> </div></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" align="justify">Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer" align="justify; margin:0; padding:0">Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
                         <td align="center" valign="top"><div align="justify">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
                             &nbsp;</div></td>
@@ -697,7 +726,7 @@ function showBoxes(frm){
             <td colspan="3"><hr /></td>
           </tr>
           <tr>
-            <td align="center" valign="middle"> Example </td>
+            <td align="left" style="padding-left:20px" valign="middle"> Example </td>
             <td align="center" valign="middle"> Description </td>
             <td align="center" valign="middle"> Score </td>
           </tr>
@@ -714,7 +743,7 @@ function showBoxes(frm){
               <table  align="center">
                 <tr>
                   <td><table width="100%">
-                      <tr  id="m1">
+                      <tr class="border" id="m1">
                         <td>
                          <a href="mtn/mtn1b.png"
                          target="_self" class="inline-block litebox">
@@ -722,58 +751,78 @@ function showBoxes(frm){
                         </a>
                         
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Exposure of MT units without direct damage. </p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0; margin:0; padding:0; padding-left:10px; padding-right:10px;"><label for="rbtnmtn1">Exposure of MT units without direct damage.</label> </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="mtn1"/>
-                          &nbsp;</td>
+                          &nbsp;
+                         <br>
+                            <br>
+                          <input id="rbtnmtn1" type="radio" name="mtnradio">
+                          </td>
                       </tr>
-                      <tr id="m2">
+                      <tr class="border" id="m2">
                         <td>
                          <a href="mtn/mtn2b.png"
                          target="_self" class="inline-block litebox">
                         <img src="mtn/mtn2.png" alt="skin2" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer" >Repairable injury to MT unit.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0;padding-left:10px; padding-right:10px;" ><label for="rbtnmtn2">Repairable injury to MT unit.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="mtn2"/>
-                          &nbsp;</td>
+                          &nbsp;
+                          <br>
+                            <br>
+                          <input id="rbtnmtn2" type="radio" name="mtnradio">
+                          </td>
                       </tr>
-                      <tr  id="m3">
+                      <tr class="border" id="m3">
                         <td>
                          <a href="mtn/mtn3b.png"
                          target="_self" class="inline-block litebox">
                         <img src="mtn/mtn3.png" alt="skin3" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Crushing with loss or irreparable damage to MT unit/repairable injury to a nerve.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0;padding-left:10px; padding-right:10px;"><label for="rbtnmtn3">Crushing with loss or irreparable damage to MT unit/repairable injury to a nerve.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="mtn3"/>
-                          &nbsp;</td>
+                          &nbsp;
+                           <br>
+                            <br>
+                          <input id="rbtnmtn3" type="radio" name="mtnradio">
+                          </td>
                       </tr>
-                      <tr id="m4">
+                      <tr class="border" id="m4">
                         <td>
                         <a href="mtn/mnt4b.png"
                          target="_self" class="inline-block litebox">
 <img src="mtn/mnt4.png" alt="skin4" />
 </a>
 </td>
-                        <td align="left" valign="top"><p style="cursor:pointer">Loss of one compartment of MT unit / Irreparable injury to a nerve.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0;padding-left:10px; padding-right:10px;"><label for="rbtnmtn4">Loss of one compartment of MT unit / Irreparable injury to a nerve.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="mtn4"/>
-                          &nbsp;</td>
+                          &nbsp;
+                          
+                           <br>
+                            <br>
+                           
+                          <input id="rbtnmtn4" type="radio" name="mtnradio">
+                          </td>
                       </tr>
-                      <tr id="m5">
+                      <tr class="border" id="m5">
                         <td>
                         <a href="mtn/mtn5b.png"
                          target="_self" class="inline-block litebox">
                         <img src="mtn/mtn5.png" alt="skin5" /> 
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer" align="justify">	Loss of two or more compartment / subtotal amputation.</p></td>
-                        <td align="center" valign="top"><div align="justify">&nbsp;
+                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0;padding-left:10px; padding-right:10px;"><label for="rbtnmtn5">Loss of two or more compartment / subtotal amputation.</label></p></td>
+                        <td align="center" valign="top">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="mtn5"/>
-                            &nbsp;</div></td>
+                            &nbsp; <br>
+                            <br>
+                          <input id="rbtnmtn5" type="radio" name="mtnradio"></td>
                       </tr>
                       <tr id="m6" style="visibility:hidden">
                         <td><div align="justify"><img src="leg5ic.png" alt="skin5" /> </div></td>
@@ -801,7 +850,7 @@ function showBoxes(frm){
           <td colspan="3"><hr /></td>
         </tr>
         <tr>
-          <td align="center" valign="middle"> Example </td>
+          <td align="left" style="padding-left:20px" valign="middle"> Example </td>
           <td align="center" valign="middle"> Description </td>
           <td align="center" valign="middle"> Score </td>
         </tr>
@@ -817,69 +866,85 @@ function showBoxes(frm){
               <table align="center">
                 <tr>
                   <td><table width="100%">
-                      <tr>
-                        <td align="center" valign="middle"> Example </td>
-                        <td align="center" valign="middle"> Description </td>
-                        <td align="center" valign="middle"> Score </td>
-                      </tr>
-                      <tr  id="b1">
+                      
+                      <tr class="border" id="b1">
                         <td>
                         <a href="bj/bj1b.png"
                          target="_self" class="inline-block litebox">
                         <img src="bj/bj1.png" alt="skin1" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Transverse or oblique fractures with minimal Periosteal stripping.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify; margin:0; padding:0;padding-left:10px; padding-right:10px;"><label for="rbtnbj1">Transverse or oblique fractures with minimal Periosteal stripping.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="1" id="bj1"/>
-                          &nbsp;</td>
+                          &nbsp;
+                          <br>
+                          <br>
+                          <input id="rbtnbj1" type="radio" name="bjradio">
+                          </td>
                       </tr>
-                      <tr id="b2">
+                      <tr class="border" id="b2">
                         <td>
                         <a href="bj/bj2b.png"
                          target="_self" class="inline-block litebox">
                         <img src="bj/bj2.png" alt="skin2" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Presence of unicortical comminution</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify; margin:0; padding:0;padding-left:10px; padding-right:10px;"><label for="rbtnbj2">Presence of unicortical comminution</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="2" id="bj2"/>
-                          &nbsp;</td>
+                          &nbsp;
+                           <br>
+                          <br>
+                          <input id="rbtnbj2" type="radio" name="bjradio">
+                          </td>
                       </tr>
-                      <tr  id="b3">
+                      <tr class="border" id="b3">
                         <td>
                          <a href="bj/bj.3b.png"
                          target="_self" class="inline-block litebox">
                         <img src="bj/bj.3.png" alt="skin3" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Extensive periarticlular comminution with joint disorganization.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify; margin:0; padding:0;padding-left:10px; padding-right:10px;"><label for="rbtnbj3">Extensive periarticlular comminution with joint disorganization.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="3" id="bj3"/>
-                          &nbsp;</td>
+                          &nbsp;
+                          <br>
+                          <br>
+                          <input id="rbtnbj3" type="radio" name="bjradio">
+                          </td>
                       </tr>
-                      <tr id="b4">
+                      <tr class="border" id="b4">
                         <td>
                          <a href="bj/bj4b.png"
                          target="_self" class="inline-block litebox">
                         <img src="bj/bj4.png" alt="skin4" />
                         </a>
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify">Circumferential comminution of bone with or without bone loss of less than 4 cm.</p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; text-align:justify; margin:0; padding:0;padding-left:10px; padding-right:10px;"><label for="rbtnbj4">Circumferential comminution of bone with or without bone loss of less than 4 cm.</label></p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="4" id="bj4"/>
-                          &nbsp;</td>
+                          &nbsp;
+                           <br>
+                          <br>
+                          <input id="rbtnbj4" type="radio" name="bjradio">
+                          </td>
                       </tr>
-                      <tr id="b5">
+                      <tr class="border" id="b5">
                         <td><div align="justify"><img src="bj/bj5.png" alt="skin5" /> </div></td>
-                        <td align="center" valign="top"><p style="cursor:pointer" align="justify" >5.	Comminuted or segmental fractures with primary or secondary bone loss of more than 4 cm.</p></td>
-                        <td align="center" valign="top"><div align="justify">&nbsp;
+                        <td align="center" valign="top"><p style="cursor:pointer" align="justify; margin:0; padding:0;padding-left:10px; padding-right:10px;" ><label for="rbtnbj5">Comminuted or segmental fractures with primary or secondary bone loss of more than 4 cm.</label></p></td>
+                        <td align="center" valign="top">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="bj5"/>
-                            &nbsp;</div></td>
+                            &nbsp;
+                             <br>
+                          <br>
+                          <input id="rbtnbj5" type="radio" name="bjradio">
+                            </td>
                       </tr>
                       <tr id="b6" style="visibility:hidden">
                         <td><div align="justify"><img src="leg5ic.png" alt="skin5" /> </div></td>
-                        <td align="left" valign="top"><p style="cursor:pointer" align="justify" >Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer" align="justify; margin:0; padding:0;padding-left:10px; padding-right:10px;" ><label id="rbtnbj1">Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
                         <td align="center" valign="top"><div align="justify">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
                             &nbsp;</div></td>
@@ -1006,15 +1071,16 @@ function showBoxes(frm){
           <tr>
             <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Final Score Board</h3>
               <br></td>
-            <td style="width:10%"><input type="text"  readonly="true"  style="text-align:center" value="0" id="FinalScorevalue"/>
+            <td style="width:10%">
+            
+           <label for="myalue" style="vertical-align: middle; visibility:hidden"></label>
+           
               &nbsp; </td>
           </tr>
           <tr>
             <td colspan="3"><hr /></td>
           </tr>
-          <tr>
-            <td colspan="3"><hr /></td>
-          </tr>
+         
         </table>
       </div>
       <div class="swiper-container scroll-container">
@@ -1022,30 +1088,30 @@ function showBoxes(frm){
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="page-inner">
-              <table style=" width:100%; height:100%" align="center">
+              <table align="center">
                 <tr>
                   <td align="center" valign="middle">
                   <table align="center">
                       <tr>
-                        <td align="left" valign="top"><p>Covering Tissues  Skin  Score</p></td>
+                        <td align="left" valign="top"><p style="margin:0;padding:0">Covering Tissues  Skin  Score</p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="skinscorevalue"/>
                           &nbsp;</td>
                       </tr>
                       <tr >
-                        <td align="left" valign="top"><p>Muscle, Tendon, Nerves Score </p></td>
+                        <td align="left" valign="top"><p style="margin:0;padding:0">Muscle, Tendon, Nerves Score </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center"  value="0" id="mtnscorevalue"/>
                           &nbsp;</td>
                       </tr>
                       <tr>
-                        <td align="left" valign="top"><p>Bone and Joint score </p></td>
+                        <td align="left" valign="top"><p style="margin:0;padding:0">Bone and Joint score </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="bjscorevalue"/>
                           &nbsp;</td>
                       </tr>
                       <tr>
-                        <td align="left" valign="top"><p>Co-morbid factors influencing outcome </p></td>
+                        <td align="left" valign="top"><p style="margin:0;padding:0">Co-morbid factors influencing outcome </p></td>
                         <td align="center" valign="top">&nbsp;
                           <input type="text"  readonly="true"  style="width:30px; text-align:center" value="0" id="cmsscorevalue"/>
                           &nbsp; <br /></td>
@@ -1061,10 +1127,56 @@ function showBoxes(frm){
                        </td>
                       </tr>
                     </table></td>
+                    <td align="center" style="padding-left:20px" valign="top">
+                      <div>Score Value</div>	
+                    <p style="color:#06F; font-size:36px; font-family:'Arial Black', Gadget, sans-serif;" id="FinalScorevalue">0</p>
+                    </td>
                 </tr>
               </table>
+              <div style="text-transform:uppercase; font-weight:bolder">reference</div>
+              
               <div><hr></div>
-              <div align="center"><img src="FinalScore.png" /></div>
+              <!--<div align="center"><img src="FinalScore.png" /></div>-->
+				<div align="center">
+                	<table>
+                    	<tr>
+                        	<td align="left">
+                            	Score < 14  
+                            </td>
+                            <td>
+                            :
+                            </td>
+                            <td align="left">
+                            Limb salvage
+                            </td>
+                           
+                        </tr>
+                       <tr>
+                        	<td align="left">
+                            	Score between 14 to 16  
+                            </td>
+                              <td>
+                            :
+                            </td>
+                            <td align="left">
+                            Grey zone, salvage if good facilities.
+                            </td>
+                           
+                        </tr>
+                       <tr>
+                        	<td align="left">
+                            	Score > 17   
+                            </td>
+                              <td>
+                            :
+                            </td>
+                            <td align="left">
+                            Amputation
+                            </td>
+                           
+                        </tr>
+                    </table>
+                </div>
               <div><hr></div>
             </div>
           </div>
