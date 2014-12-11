@@ -20,6 +20,12 @@
     
 
 </script>
+
+<!-- Toast message -->
+
+<link rel="stylesheet" href="css/jquery.toastmessage.css">
+<script src="js/jquery.toastmessage.js"></script>
+
 <script type="text/javascript">
 
 
@@ -97,7 +103,7 @@
 				  $("#bjcore").val(0);
 				   //$("input[type='checkbox']").removeAttr('checked');
 				   $("#UnCheckIt").click(function () {
- 
+ 	
 	$('input:checkbox[name=checkme]').attr('checked',false);
  
     });	
@@ -199,9 +205,40 @@
 				 var finaltotal = parseInt(skincorevalue)+parseInt(mtnscorevalue)+parseInt(bjcorevalue)+parseInt(cmsscorevalue)
 					$("#FinalScorevalue").html(finaltotal);
 					$("label[for='myalue']").html(finaltotal);
-  							
+					if(finaltotal<14)	
+					//alert("Score<14:Limb Salvage");
+					$().toastmessage('showSuccessToast', 'Score<14:Limb Salvage');				
+					else if(finaltotal>=14 & finaltotal<=16)
+					//alert ("Score between 14 to 16 :Grey Zone, Salvage if good Facilities");
+					$().toastmessage('showSuccessToast', 'Score between 14 to 16 :Grey Zone, Salvage if good Facilities');
+					else
+						//setTimeout(alert('Score>17 : Amputation').fadeOut(1500));
+						$().toastmessage('showSuccessToast', 'Score>17 : Amputation'); 
+					//alert("Score>17 : Amputation");
+					 /*setTimeout(function() {
+							$(fntrig()).fadeOut(1500);
+						},3000);
+					
+					$().toastm
+					
+					essage('showSuccessToast', "Success Dialog which is fading away ...";*/
+					
+					/*$().toastmessage('showNoticeToast', 'some message here');
+$().toastmessage('showSuccessToast', 'some message here');
+$().toastmessage('showWarningToast', 'some message here');
+$().toastmessage('showErrorToast', 'some message here');
+*/
+					
+  						
 				
 			 });
+			 
+			 
+			 
+			 function fntrig()
+			 {
+				 alert("Score>17 : Amputation");
+			 }
 			 
 			 
 			  
@@ -615,9 +652,6 @@ function showBoxes(frm){
           <div class="swiper-slide">
             <div class="page-inner">
             
-            
-            
-            
               <table align="center">
                 <tr>
                   <td><table  width="100%">
@@ -740,9 +774,9 @@ function showBoxes(frm){
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="page-inner">
-              <table  align="center">
+              <table  width="100%" align="center">
                 <tr>
-                  <td><table width="100%">
+                  <td  width="100%"><table width="100%">
                       <tr class="border" >
                         <td>
                          <a href="mtn/mtn1b.png"
@@ -863,7 +897,7 @@ function showBoxes(frm){
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="page-inner">
-              <table align="center">
+              <table width="100%" align="center">
                 <tr>
                   <td><table width="100%">
                       
@@ -984,7 +1018,7 @@ function showBoxes(frm){
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="page-inner">
-              <table  style="width:100%; height:100%" align="center">
+              <table width="100%"  style="width:100%; height:100%" align="center">
                 <tr>
                   <td><table width="100%" height="100%">
                       <tr>
