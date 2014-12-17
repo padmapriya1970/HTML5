@@ -4,6 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1">
 <title>Simple Swiper App</title>
+
+<style type="text/css">
+.messageBox {  
+width:150px;  
+padding:10px;  
+border:1px solid #666;  
+position:fixed; rightright:2%;  
+top:2%;  
+z-index:999;  
+-webkit-border-radius: 6px; -moz-border-radius: 6px;} 
+
+
+.msg1 {  
+
+padding:10px;  
+border:1px solid #666;  
+width:200px;
+ position:fixed;
+    top: 50%;
+    left: 35%;
+z-index:999;  
+
+  background-image: -webkit-linear-gradient(top, #3498db, #000);
+  background-image: -moz-linear-gradient(top, #3498db, #000);
+  background-image: -ms-linear-gradient(top, #3498db, #000);
+  background-image: -o-linear-gradient(top, #3498db, #000);
+  background-image: linear-gradient(to bottom, #3498db, #000);
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 18px;
+  color:#fff;
+  font-size:15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+ }
+
+</style>
+
+<script src="js/jquery-latest.js"></script>  
+  
+  
+  
+  
+  
+<script>  
+
+$(document).ready(function(){  
+/*setTimeout(function() {  
+$('.messageBox').fadeOut('slow');  
+}, 1000); // <-- time in milliseconds  
+*/
+$().toastmessage('showSuccessToast', 'Swipe UP or Click to Open Ganga Hospital Score ');
+}); 
+
+
+</script>  
+
+
+
+
 <link rel="stylesheet" href="css/idangerous.swiper.css">
 <link rel="stylesheet" href="css/idangerous.swiper.scrollbar.css">
 <link rel="stylesheet" href="css/normalize.css">
@@ -34,40 +94,81 @@
 			
             $('#s1').click(function() {
              $('#skinscore').val(1);
-			 $('#s1').css("cursor","pointer");
+
+			$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
+
 			 
             });
 			 $('#s2').click(function() {
              $('#skinscore').val(2);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#s3').click(function() {
              $('#skinscore').val(3);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#s4').click(function() {
              $('#skinscore').val(4);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#s5').click(function() {
              $('#skinscore').val(5);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
             
             
             
             $('#m1').click(function() {
              $('#mtnscore').val(1);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
 			 $('#m1').css("cursor","pointer");
 			 
             });
 			 $('#m2').click(function() {
              $('#mtnscore').val(2);
+			 $('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#m3').click(function() {
              $('#mtnscore').val(3);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#m4').click(function() {
              $('#mtnscore').val(4);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#m5').click(function() {
              $('#mtnscore').val(5);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
             
             
@@ -75,20 +176,41 @@
             
              $('#b1').click(function() {
              $('#bjcore').val(1);
+			 
 			 $('#b1').css("cursor","pointer");
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
 			 
             });
 			 $('#b2').click(function() {
              $('#bjcore').val(2);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#b3').click(function() {
              $('#bjcore').val(3);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#b4').click(function() {
              $('#bjcore').val(4);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
 			 $('#b5').click(function() {
              $('#bjcore').val(5);
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
             });
             
             
@@ -247,6 +369,12 @@ $().toastmessage('showErrorToast', 'some message here');
 			   var total=0;
 			   
 			 $('#chk1').click(function(){
+				 $('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
+				 
+				 
         var isChecked = $('#chk1').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -271,7 +399,10 @@ $().toastmessage('showErrorToast', 'some message here');
       });
 	  
 	   $('#chk2').click(function(){
-		   
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
         var isChecked = $('#chk2').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -298,6 +429,10 @@ $().toastmessage('showErrorToast', 'some message here');
 	  
 	  
 	  $('#chk3').click(function(){
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
         var isChecked = $('#chk3').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -323,6 +458,10 @@ $().toastmessage('showErrorToast', 'some message here');
 	  
 	  
 	  $('#chk4').click(function(){
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
         var isChecked = $('#chk4').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -348,6 +487,10 @@ $().toastmessage('showErrorToast', 'some message here');
 	  
 	  
 	  $('#chk5').click(function(){
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
         var isChecked = $('#chk5').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -372,6 +515,10 @@ $().toastmessage('showErrorToast', 'some message here');
       });
 	  
 	  $('#chk6').click(function(){
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
         var isChecked = $('#chk6').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -396,6 +543,10 @@ $().toastmessage('showErrorToast', 'some message here');
       });
 			
 			 $('#chk7').click(function(){
+$('.msg1').css("display","block");
+			 setTimeout(function() {  
+				$('.msg1').fadeOut('slow');  
+				}, 1000); // <-- time in milliseconds
         var isChecked = $('#chk7').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -610,7 +761,9 @@ function showBoxes(frm){
 </head>
 <body>
 <div id="show">
+<div align="center" style="color:#000; display:none" class="messageBox">Swipe or click to open</div>  
 <div style="width:100%;height:100%"> <img id="img" width="100%" style="cursor:pointer" height="100%" src="bj.png" /> </div>
+      
 
 <div  class="swiper-nav swiper-container">
 	<div align="center" style="font-weight:bolder; text-decoration:underline">Ganga Hospital Score</div>
@@ -623,13 +776,16 @@ function showBoxes(frm){
     
   </div>
 </div>
+
 <div  style="background-color:#FFF; color:#000" class="swiper-pages swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
       <div>
         <table style="width:100%">
           <tr>
-            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Covering Tissues (skin and fascia) Score</h3></td>
+            <td align="center" valign="middle" colspan="2" style="width:90%"><h3>Covering Tissues (skin and fascia) Score</h3>
+            <div align="center" style="display:none" class="msg1">Swipe to Next/Prev Screen</div>  
+            </td>
             <td style="width:10%"><input type="text"  readonly="true"  style="text-align:center;" value="0" id="skinscore"/>
               &nbsp; </td>
           </tr>
@@ -647,11 +803,12 @@ function showBoxes(frm){
         </table>
       </div>
       <div class="swiper-container scroll-container">
+
         <div class="swiper-scrollbar"></div>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="page-inner">
-            
+
               <table align="center">
                 <tr>
                   <td><table  width="100%">
@@ -725,7 +882,9 @@ function showBoxes(frm){
                          target="_self" class="inline-block litebox">
                         <img src="leg5ic.png" alt="skin5" /> 
                         </td>
-                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0;padding-left:10px; padding-right:10px;" > <label for="s5">Wounds involving skin loss over the entire circumference of the limb, extensive degloving often present, pose problem in soft tissue reconstruction, huge time is lost, bony reconstruction is often dictated by soft tissue reconstruction.</label></p></td>
+                        <td align="left" valign="top"><p style="cursor:pointer; margin:0; padding:0;padding-left:10px; padding-right:10px;" > <label for="s5">Wounds involving skin loss over the entire circumference of the limb, extensive degloving often present, pose problem in soft tissue reconstruction, huge time is lost, bony reconstruction is often dictated by soft tissue reconstruction.</label></p>
+                                    
+                        </td>
                         <td align="center" valign="top">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
                             &nbsp;
@@ -738,7 +897,9 @@ function showBoxes(frm){
                         <td align="left" valign="top"><p style="cursor:pointer" align="justify; margin:0; padding:0">Circumferetial wound with skin loss -  Wound with Skin Loss </p></td>
                         <td align="center" valign="top"><div align="justify">&nbsp;
                             <input type="text"  readonly="true"  style="width:30px; text-align:center" value="5" id="skin5"/>
-                            &nbsp;</div></td>
+                            &nbsp;</div>
+                            
+                            </td>
                       </tr>
                     </table></td>
                 </tr>
