@@ -172,6 +172,10 @@ $('.messageBox').fadeOut('slow');
 }, 1000); // <-- time in milliseconds  
 */
 $().toastmessage('showSuccessToast', 'Swipe UP or Click to Open Ganga Hospital Score ');
+ $("img").on("swipe", "swipeLeft", "swipeRight", "swipeUp", "swipeDown", "doubleTap", "tap", "singleTap", "longTap",function(){
+            //$("#img").css("display","none");
+            alert('Swipe UP');
+          });                       
 
 
 
@@ -793,7 +797,7 @@ navigator.app.exitApp();
 
     <script>
 		$(document).ready(function() {
-		  $('.nav-toggle').click(function(){
+		  /*$('.nav-toggle').click(function(){
 			//get collapse content selector
 			var collapse_content_selector = $(this).attr('href');					
             $("#img").css("display","none");
@@ -811,20 +815,15 @@ navigator.app.exitApp();
 			  }
 			});
 		  });
+		  */
 		  
 		   $('#img').click(function(){
 			   
-			   $("#img").css("display","none");
-			   
-			   
-			   
+		   $("#img").css("display","none");
+			 			 	   
 			  			   
 		   });
-		   $("img").on("swipeUp",function(){
-            //$("#img").css("display","none");
-            alert('Swipe UP');
-          });                       
-		  
+		  		  
  
 		});	
 		
@@ -918,13 +917,16 @@ function showBoxes(frm){
 </head>
 <body>
     <div>
-        <div id="show">
+        <div>
                 <div style="width: 100%; height: 100%">
                     <img id="img" width="100%" style="cursor: pointer" height="100%" src="bj.png" />
                 </div>
                 <div align="center" style="color: #000; display: none" class="messageBox">
                     Swipe or click to open</div>
                 <div>
+                <div class="title" align="center" style="font-weight: bolder; visibility:hidden">
+                    Ganga Hospital Score
+                </div>
                 <div class="title" align="center" style="font-weight: bolder;">
                     Ganga Hospital Score
                 </div>
