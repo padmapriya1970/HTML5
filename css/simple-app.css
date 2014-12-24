@@ -11,7 +11,8 @@ body {
 }
 .swiper-nav {
 	height:70px;
-	width: 100%;
+	width:inherit;
+	font-size:smaller;
 	background-color: #09F;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#09F));
 	background-image: -webkit-linear-gradient(top, #333, #09F);
@@ -26,7 +27,7 @@ body {
 	cursor: pointer;
 	display: block;
 	line-height: 40px;
-	padding: 0 20px;
+	padding: 0 5px;
 	color: #fff;
 	text-align: center;
 	border-right: 1px solid #000;
