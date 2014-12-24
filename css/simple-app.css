@@ -10,7 +10,7 @@ body {
 	color: #fff;
 }
 .swiper-nav {
-	height:50px;
+	height:70px;
 	width: 100%;
 	background-color: #09F;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#09F));
