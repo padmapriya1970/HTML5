@@ -546,10 +546,10 @@ $().toastmessage('showErrorToast', 'some message here');
 			   var total=0;
 			   
 			 $('#chk1').click(function(){
-				 $('.msg2').css("display","block");
+				 /*$('.msg2').css("display","block");
 			 setTimeout(function() {  
 				$('.msg2').fadeOut('slow');  
-				}, 1000); // <-- time in milliseconds
+				}, 1000); // <-- time in milliseconds*/
 				 
 				 
         var isChecked = $('#chk1').is(':checked');
@@ -576,10 +576,7 @@ $().toastmessage('showErrorToast', 'some message here');
       });
 	  
 	   $('#chk2').click(function(){
-$('.msg2').css("display","block");
-			 setTimeout(function() {  
-				$('.msg2').fadeOut('slow');  
-				}, 1000); // <-- time in milliseconds
+
         var isChecked = $('#chk2').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -606,10 +603,7 @@ $('.msg2').css("display","block");
 	  
 	  
 	  $('#chk3').click(function(){
-$('.msg2').css("display","block");
-			 setTimeout(function() {  
-				$('.msg2').fadeOut('slow');  
-				}, 1000); // <-- time in milliseconds
+
         var isChecked = $('#chk3').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -635,10 +629,7 @@ $('.msg2').css("display","block");
 	  
 	  
 	  $('#chk4').click(function(){
-$('.msg2').css("display","block");
-			 setTimeout(function() {  
-				$('.msg2').fadeOut('slow');  
-				}, 1000); // <-- time in milliseconds
+
         var isChecked = $('#chk4').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -664,10 +655,7 @@ $('.msg2').css("display","block");
 	  
 	  
 	  $('#chk5').click(function(){
-$('.msg2').css("display","block");
-			 setTimeout(function() {  
-				$('.msg2').fadeOut('slow');  
-				}, 1000); // <-- time in milliseconds
+
         var isChecked = $('#chk5').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -692,10 +680,7 @@ $('.msg2').css("display","block");
       });
 	  
 	  $('#chk6').click(function(){
-$('.msg2').css("display","block");
-			 setTimeout(function() {  
-				$('.msg2').fadeOut('slow');  
-				}, 1000); // <-- time in milliseconds
+
         var isChecked = $('#chk6').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -720,10 +705,7 @@ $('.msg2').css("display","block");
       });
 			
 			 $('#chk7').click(function(){
-$('.msg2').css("display","block");
-			 setTimeout(function() {  
-				$('.msg2').fadeOut('slow');  
-				}, 1000); // <-- time in milliseconds
+
         var isChecked = $('#chk7').is(':checked');
 		var value = $("#cmsscore").val();
         if(isChecked)
@@ -1021,18 +1003,16 @@ function showBoxes(frm){
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="page-inner">
-                                            <table align="center">
+                                            <table>
                                                 <tr>
                                                     <td>
                                                         <table width="100%">
                                                             <tr>
-                                                                <td valign="top" align="right">
-                                                                    1.&nbsp;
-                                                                </td>
+                                                                
                                                                 <td align="left" valign="top">
                                                                     <p style="cursor: pointer; text-align: justify; padding-top:5px; padding-left: 10px;
                                                                         padding-right: 10px;">
-                                                                        This score acts as a predictable single scoring system for both limb salvage and
+                                                                     1.&nbsp; &nbsp;  This score acts as a predictable single scoring system for both limb salvage and
                                                                         also prognosticating outcome measures of requirement of flap procedure, number of
                                                                         inpatient days, union time, rate of infection, number of surgical procedures required
                                                                         and primary cost of treatment in the salvageable limbs.
@@ -1040,39 +1020,33 @@ function showBoxes(frm){
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td valign="top" align="right">
-                                                                    2.&nbsp;
-                                                                </td>
+                                                                
                                                                 <td align="left" valign="top">
                                                                     <p style="cursor: pointer; text-align: justify;padding-top:5px; padding-left: 10px;
                                                                         padding-right: 10px;">
-                                                                        The score is based on well-defined objective criteria and has an average inter-observer
+                                                                        2.&nbsp; &nbsp; The score is based on well-defined objective criteria and has an average inter-observer
                                                                         agreement rate of 98.4 per cent for the total score and 97.9 per cent for group
                                                                         allocation.
                                                                     </p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td valign="top" align="right">
-                                                                    3.&nbsp;
-                                                                </td>
+                                                                
                                                                 <td align="left" valign="top">
                                                                     <p style="cursor: pointer; text-align: justify; padding-top:5px;  padding-left: 10px;
                                                                         padding-right: 10px;">
-                                                                        It evaluates the severity of injury to all components of the injured limbs separately
+                                                                        3.&nbsp; &nbsp; It evaluates the severity of injury to all components of the injured limbs separately
                                                                         and collectively and takes into account the importance of co-morbid factors which
                                                                         influence the treatment and outcome.
                                                                     </p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td valign="top" align="right">
-                                                                    4.&nbsp;
-                                                                </td>
+                                                                
                                                                 <td align="left" valign="top">
                                                                     <p style="cursor: pointer; text-align: justify; padding-top:5px; padding-left: 10px;
                                                                         padding-right: 10px;">
-                                                                        It can be used effectively to compare the results of different modalities of
+                                                                       4.&nbsp; &nbsp; It can be used effectively to compare the results of different modalities of
                                                                         treatment and the results from different centers as the nature of injury to each
                                                                         component is assessed very objectively.
                                                                     </p>
