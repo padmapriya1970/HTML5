@@ -106,15 +106,16 @@
 		width: 40px;
 		height: 40px;
 		background: url('../imgs/litebox-close.png') no-repeat center;
-		opacity: .7;
+		
 		position: absolute;
-		top: 20px;
-		right: 20px;
+		top: 40px;
+		left: 10px;
 		-webkit-transition: all 0.2s ease-in-out;
 		-moz-transition: all 0.2s ease-in-out;
 		-o-transition: all 0.2s ease-in-out;
 		-ms-transition: all 0.2s ease-in-out;
 		transition: all 0.2s ease-in-out;
+		opacity: .7;
 	}
 
 	.litebox-overlay .litebox-close:hover {
@@ -210,6 +211,6 @@
 		line-height: normal;
 	}
 
-	@media only screen and (max-width: 479px) {
+	/*@media only screen and (max-width: 479px) {
 		.litebox-overlay .litebox-close { display: none; }
-	}
+	}*/

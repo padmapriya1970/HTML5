@@ -25,8 +25,7 @@
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
             text-rendering: optimizeLegibility;
-        }*/
-        body
+        }*/body
         {
             /*background-color: #f3f3f3;
             color: rgb(165,165,165);*/
@@ -41,11 +40,11 @@
             display: block;
             font-family: 'Varela Round' , sans-serif;
             font-size: .8em;
-            padding: .2em .5em;
             position: absolute;
             top: 1.25rem;
-            transition: all 400ms ease;
+            padding: .2em .5em;
             right: 1.25rem;
+            transition: all 400ms ease;
         }
         a.close:hover
         {
@@ -62,33 +61,30 @@
             justify-content: center;
             left: 0;
             position: absolute;
-            top:0;
-            
+            top: 0;
             width: 100%;
         }
         div .overlay .login-wrapper
         {
-            align-self: center;
+            /* align-self: center;*/
             background-color: rgba(0,0,0,.25);
             border-radius: 2px;
-            
-            margin-left:30px;
-            width: 450px;
+            width: 100%;
         }
         div.overlay .login-wrapper .login-content
         {
             background-color: rgb(255,255,255);
             border-radius: 2px;
-            padding: 24px;
+            padding: 0px;
             position: relative;
+            height: 100%;
         }
         div.overlay .login-wrapper .login-content h3
         {
             color: rgb(0,0,0);
-            font-family: 'Varela Round' , sans-serif;
-            font-size: 1.8em;
+            font-family: 'Varela Round' , sans-serif; /*font-size: 1.8em;
             margin: 0 0 1.25em;
-            padding: 0;
+            padding: 0;*/
         }
     </style>
     <!-- Pop Up box End -->
@@ -107,12 +103,11 @@
         }
         .msg1
         {
-            padding: 10px;
             border: 1px solid #666;
             width: 200px;
             position: fixed;
             top: 50%;
-            left: 35%;
+            left: 10%;
             z-index: 999;
             background-image: -webkit-linear-gradient(top, #3498db, #000);
             background-image: -moz-linear-gradient(top, #3498db, #000);
@@ -123,16 +118,16 @@
             -moz-border-radius: 18;
             border-radius: 18px;
             color: #fff;
-            font-size: 15px;
-            padding: 10px 20px 10px 20px;
+            font-weight: bolder;
+            font-size: 13px;
+            padding: 5px 10px 5px 10px;
             text-decoration: none;
         }
         .swipebutton
         {
             padding: 10px;
             border: 1px solid #666;
-            width:220px;
-            
+            width: 220px;
             background-image: -webkit-linear-gradient(top, #3498db, #000);
             background-image: -moz-linear-gradient(top, #3498db, #000);
             background-image: -ms-linear-gradient(top, #3498db, #000);
@@ -144,6 +139,25 @@
             color: #fff;
             font-size: 15px;
             padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+        
+        .guidebutton
+        {
+           
+            border: 1px solid #666;
+            width:auto
+            background-image: -webkit-linear-gradient(top, #3498db, #000);
+            background-image: -moz-linear-gradient(top, #3498db, #000);
+            background-image: -ms-linear-gradient(top, #3498db, #000);
+            background-image: -o-linear-gradient(top, #3498db, #000);
+            background-image: linear-gradient(to bottom, #3498db, #000);
+            -webkit-border-radius: 15;
+            -moz-border-radius: 15;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 15px;
+            padding: 5px 10px 5px 10px;
             text-decoration: none;
         }
         .msg2
@@ -236,6 +250,13 @@ $().toastmessage('showSuccessToast', 'Swipe UP or Click to Open Ganga Hospital S
 
         $(document).ready(function() {
 			jQuery('body').css('overflow','hidden'); 
+			
+			 $('#guide').click(function() {
+             $('#scoreblock').css("display","none");
+              $('#guideline').css("display","block");
+             
+              
+             });
 			
             $('#s1').click(function() {
              $('#skinscore').val(1);
@@ -460,6 +481,8 @@ $('.msg1').css("display","block");
 				
 			 });
 			  $('#six').click(function() {
+			   $('#scoreblock').css("display","inline");
+              $('#guideline').css("display","none");
 				var cmsscorevalue= $("#cmsscore").val();
 				 var skincorevalue= $("#skinscore").val();
 				var mtnscorevalue= $("#mtnscore").val();
@@ -475,20 +498,28 @@ $('.msg1').css("display","block");
 					
 					
 					if(finaltotal<14)	
+					
 					$("#resultvalue").text('Score<14:Limb Salvage');
-					//$().toastmessage('showSuccessToast', 'Score<14:Limb Salvage');				
+					//$().toastmessage('showSuccessToast', 'Score<14:Limb Salvage');	
+					
 					else if(finaltotal>=14 & finaltotal<=16)
 					$("#resultvalue").text('Score between 14 to 16 :Grey Zone, Salvage if good Facilities');
 					//alert ("Score between 14 to 16 :Grey Zone, Salvage if good Facilities");
 					//$().toastmessage('showSuccessToast', 'Score between 14 to 16 :Grey Zone, Salvage if good Facilities');
+					
 					else
 					$("#resultvalue").text('Score>17 : Amputation');
 						//setTimeout(alert('Score>17 : Amputation').fadeOut(1500));
-						//$().toastmessage('showSuccessToast', 'Score>17 : Amputation'); 
-														
-					event.preventDefault();
-    	            $(".overlay").fadeToggle("fast");
+						//$().toastmessage('showSuccessToast', 'Score>17 : Amputation');
 					
+							
+							if(finaltotal<14)	
+							$("#guide").css("display","inline");
+							else
+	                       $("#guide").css("display","none");
+					        event.preventDefault();
+    	                    $(".overlay").fadeToggle("fast");
+        					
 									
 					
 					
@@ -796,7 +827,7 @@ navigator.app.exitApp();
             background: -o-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* Opera 11.10+ */
             background: -ms-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* IE10+ */
             background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=                      '#ebe9f9' , endColorstr= '#c1bfea' , GradientType=0 ); /* IE6-9 */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=                                    '#ebe9f9' , endColorstr= '#c1bfea' , GradientType=0 ); /* IE6-9 */
         }
     </style>
 
@@ -852,7 +883,6 @@ navigator.app.exitApp();
         }
         tr
         {
-            cursor: pointer;
             padding: 5px;
         }
         .bg
@@ -920,7 +950,7 @@ function showBoxes(frm){
     <link href="assets/css/tipsy.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/litebox.css" rel="stylesheet" type="text/css" media="all" />
 </head>
-<body>
+<body onselect="false">
     <div>
         <div>
             <div style="width: 100%; height: 100%">
@@ -965,36 +995,9 @@ function showBoxes(frm){
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3">
-                                            <hr />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="left" style="padding-left: 5px" valign="middle">
-                                            Ganga Hospital Open Injury Score ( GHOISS ) is a score developed to prognosticate
-                                            limb salvage and outcome measures in Type III B Open tibial fractures.
-                                            <br />
-                                            <span>A Type IIIB injury involves injury to the:</span>
-                                            <ul>
-                                                <li>- Covering tissues (Skin and fascia) </li>
-                                                <li>- Functional tissues (Muscles, Tendons and Nerves) </li>
-                                                <li>- Skeleton(Bones and Joints) </li>
-                                            </ul>
-                                            <br />
-                                            <p>
-                                                A true prognosticating score must evaluate each component of the limb separately
-                                                and also collectively and GHOIS was developed to fulfil this criteria . The score
-                                                was developed after a systematic study of 88 open injury case of the lower limb
-                                                and their follow up over 5 years at Ganga Hospital, Coimbatore .
-                                            </p>
-                                            <br />
-                                            <span>This scoring system has the following advantages over the existing classifications
-                                                and scoring systems:</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3">
-                                            <hr />
+                                        <td align="right">
+                                            <div class="swipebutton">
+                                                Swipe Left To Start Score</div>
                                         </td>
                                     </tr>
                                 </table>
@@ -1010,66 +1013,80 @@ function showBoxes(frm){
                                                     <td>
                                                         <table width="100%">
                                                             <tr>
-                                                                
+                                                                <td colspan="3">
+                                                                    <hr />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" style="padding-left: 5px" valign="middle">
+                                                                    Ganga Hospital Open Injury Score ( GHOISS ) is a score developed to prognosticate
+                                                                    limb salvage and outcome measures in Type III B Open tibial fractures. <span style="padding-top: 2px;">
+                                                                        A Type IIIB injury involves injury to the:</span>
+                                                                    <ul>
+                                                                        <li>- Covering tissues (Skin and fascia) </li>
+                                                                        <li>- Functional tissues (Muscles, Tendons and Nerves) </li>
+                                                                        <li>- Skeleton(Bones and Joints) </li>
+                                                                    </ul>
+                                                                    <p style="padding-bottom: 2px;">
+                                                                        A true prognosticating score must evaluate each component of the limb separately
+                                                                        and also collectively and GHOIS was developed to fulfil this criteria . The score
+                                                                        was developed after a systematic study of 88 open injury case of the lower limb
+                                                                        and their follow up over 5 years at Ganga Hospital, Coimbatore .
+                                                                    </p>
+                                                                    <span>This scoring system has the following advantages over the existing classifications
+                                                                        and scoring systems:</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <hr />
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; padding-top:5px; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                     1.&nbsp; &nbsp;  This score acts as a predictable single scoring system for both limb salvage and
-                                                                        also prognosticating outcome measures of requirement of flap procedure, number of
-                                                                        inpatient days, union time, rate of infection, number of surgical procedures required
-                                                                        and primary cost of treatment in the salvageable limbs.
+                                                                    <p style="text-align: justify; padding-top: 5px; padding-left: 10px; padding-right: 10px;">
+                                                                        1.&nbsp; &nbsp; This score acts as a predictable single scoring system for both
+                                                                        limb salvage and also prognosticating outcome measures of requirement of flap procedure,
+                                                                        number of inpatient days, union time, rate of infection, number of surgical procedures
+                                                                        required and primary cost of treatment in the salvageable limbs.
                                                                     </p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify;padding-top:5px; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        2.&nbsp; &nbsp; The score is based on well-defined objective criteria and has an average inter-observer
-                                                                        agreement rate of 98.4 per cent for the total score and 97.9 per cent for group
-                                                                        allocation.
+                                                                    <p style="text-align: justify; padding-top: 5px; padding-left: 10px; padding-right: 10px;">
+                                                                        2.&nbsp; &nbsp; The score is based on well-defined objective criteria and has an
+                                                                        average inter-observer agreement rate of 98.4 per cent for the total score and 97.9
+                                                                        per cent for group allocation.
                                                                     </p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; padding-top:5px;  padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        3.&nbsp; &nbsp; It evaluates the severity of injury to all components of the injured limbs separately
-                                                                        and collectively and takes into account the importance of co-morbid factors which
-                                                                        influence the treatment and outcome.
+                                                                    <p style="text-align: justify; padding-top: 5px; padding-left: 10px; padding-right: 10px;">
+                                                                        3.&nbsp; &nbsp; It evaluates the severity of injury to all components of the injured
+                                                                        limbs separately and collectively and takes into account the importance of co-morbid
+                                                                        factors which influence the treatment and outcome.
                                                                     </p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; padding-top:5px; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                       4.&nbsp; &nbsp; It can be used effectively to compare the results of different modalities of
-                                                                        treatment and the results from different centers as the nature of injury to each
+                                                                    <p style="text-align: justify; padding-top: 5px; padding-left: 10px; padding-right: 10px;">
+                                                                        4.&nbsp; &nbsp; It can be used effectively to compare the results of different modalities
+                                                                        of treatment and the results from different centers as the nature of injury to each
                                                                         component is assessed very objectively.
                                                                     </p>
                                                                 </td>
-                                                                
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="right">
-                                                                    
-                                                                    <div class="swipebutton">Swipe Left To Start Score</div>
-                                                                    
-                                                                </td>
-                                                                
                                                             </tr>
                                                             <tr id="Tr1" style="visibility: hidden">
-                                                                <td>
-                                                                    
-                                                                        <img src="leg5ic.png" alt="skin5" />
-                                                                    
+                                                                <td align="left" valign="top">
+                                                                    <p style="text-align: justify; padding-top: 5px; padding-left: 10px; padding-right: 10px;">
+                                                                        4.&nbsp; &nbsp; It can be used effectively to compare the results of different modalities
+                                                                        of treatment and the results from different centers as the nature of injury to each
+                                                                        component is assessed very objectively.
+                                                                    </p>
                                                                 </td>
-                                                                
                                                             </tr>
                                                         </table>
                                                     </td>
@@ -1080,7 +1097,6 @@ function showBoxes(frm){
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="swiper-slide">
                             <div>
                                 <table style="width: 100%">
@@ -1116,11 +1132,11 @@ function showBoxes(frm){
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
-                            <div class="swiper-container scroll-container">
                                 <div class="title" align="left" colspan="3" style="font-weight: bolder; color: Maroon">
                                     &nbsp; Click To Enlarge Image
                                 </div>
+                            </div>
+                            <div class="swiper-container scroll-container">
                                 <div class="swiper-scrollbar">
                                 </div>
                                 <div class="swiper-wrapper">
@@ -1137,11 +1153,11 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding-top: :0; padding-left: 10px;
-                                                                        padding-right: 10px;">
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
                                                                         <label for="s1">
                                                                             Wounds not present over the bone, which have adequate soft tissue bed and can be
-                                                                            sutured without tension.</label>
+                                                                            sutured without tension.
+                                                                        </label>
                                                                     </p>
                                                                 </td>
                                                                 <td align="center" valign="top">
@@ -1150,7 +1166,7 @@ function showBoxes(frm){
                                                                         id="skin1" />
                                                                     &nbsp;
                                                                     <br>
-                                                                    <input id="s1" type="radio" name="skinradio">
+                                                                    <input id="s1" type="radio" name="skinradio" />
                                                                 </td>
                                                             </tr>
                                                             <tr class="border">
@@ -1160,12 +1176,10 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="s2">
-                                                                            Wounds not present over the bone but with primary skin loss or requiring excision
-                                                                            of skin during debridement, requiring skin grafting only, wound not affecting the
-                                                                            choice of fixation of the bone</label>.</p>
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Wounds not present over the bone but with primary skin loss or requiring excision
+                                                                        of skin during debridement, requiring skin grafting only, wound not affecting the
+                                                                        choice of fixation of the bone.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1183,12 +1197,10 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="s3">
-                                                                            Wounds situated over the bone and directly exposing the skeleton but without skin
-                                                                            loss either by injury or during debridement, could be sutured primarily or secondarily,
-                                                                            choice of bony stabilization had to be frequently modified.</label></p>
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Wounds situated over the bone and directly exposing the skeleton but without skin
+                                                                        loss either by injury or during debridement, could be sutured primarily or secondarily,
+                                                                        choice of bony stabilization had to be frequently modified.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1206,12 +1218,10 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="s4">
-                                                                            Wounds with primary skin loss and exposing the bone or which require extensive debridement
-                                                                            of skin due to friction burns or degloving, demanded specialized plastic surgical
-                                                                            skills at the earliest.</label></p>
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Wounds with primary skin loss and exposing the bone or which require extensive debridement
+                                                                        of skin due to friction burns or degloving, demanded specialized plastic surgical
+                                                                        skills at the earliest.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1228,11 +1238,10 @@ function showBoxes(frm){
                                                                         <img src="leg5ic.png" alt="skin5" />
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
-                                                                        <label for="s5">
-                                                                            Wounds involving skin loss over the entire circumference of the limb, extensive
-                                                                            degloving often present, pose problem in soft tissue reconstruction, huge time is
-                                                                            lost, bony reconstruction is often dictated by soft tissue reconstruction.</label></p>
+                                                                    <p style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Wounds involving skin loss over the entire circumference of the limb, extensive
+                                                                        degloving often present, pose problem in soft tissue reconstruction, huge time is
+                                                                        lost, bony reconstruction is often dictated by soft tissue reconstruction.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1306,11 +1315,11 @@ function showBoxes(frm){
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
-                            <div class="swiper-container scroll-container">
                                 <div class="title" align="left" colspan="3" style="font-weight: bolder; color: Maroon">
                                     &nbsp; Click To Enlarge Image
                                 </div>
+                            </div>
+                            <div class="swiper-container scroll-container">
                                 <div class="swiper-scrollbar">
                                 </div>
                                 <div class="swiper-wrapper">
@@ -1327,10 +1336,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; margin: 0; padding: 0; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="m1">
-                                                                            Exposure of MT units without direct damage.</label>
+                                                                    <p style="margin: 0; padding: 0; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Exposure of MT units without direct damage.
                                                                     </p>
                                                                 </td>
                                                                 <td align="center" valign="top">
@@ -1350,9 +1357,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
-                                                                        <label for="m2">
-                                                                            Repairable injury to MT unit.</label></p>
+                                                                    <p style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Repairable injury to MT unit.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1371,9 +1377,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
-                                                                        <label for="m3">
-                                                                            Crushing with loss or irreparable damage to MT unit/repairable injury to a nerve.</label></p>
+                                                                    <p style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Crushing with loss or irreparable damage to MT unit/repairable injury to a nerve.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1392,9 +1397,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
-                                                                        <label for="m4">
-                                                                            Loss of one compartment of MT unit / Irreparable injury to a nerve.</label></p>
+                                                                    <p style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Loss of one compartment of MT unit / Irreparable injury to a nerve.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1413,9 +1417,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
-                                                                        <label for="m5">
-                                                                            Loss of two or more compartment / subtotal amputation.</label></p>
+                                                                    <p style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Loss of two or more compartment / subtotal amputation.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1489,10 +1492,10 @@ function showBoxes(frm){
                                     </td>
                                 </tr>
                             </table>
+                            <div class="title" align="left" colspan="3" style="font-weight: bolder; color: Maroon">
+                                &nbsp; Click To Enlarge Image
+                            </div>
                             <div class="swiper-container scroll-container">
-                                <div class="title" align="left" colspan="3" style="font-weight: bolder; color: Maroon">
-                                    &nbsp; Click To Enlarge Image
-                                </div>
                                 <div class="swiper-scrollbar">
                                 </div>
                                 <div class="swiper-wrapper">
@@ -1509,10 +1512,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="b1">
-                                                                            Transverse or oblique fractures with minimal Periosteal stripping.</label></p>
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Transverse or oblique fractures with minimal Periosteal stripping.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1531,10 +1532,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="b2">
-                                                                            Presence of unicortical comminution</label></p>
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Presence of unicortical comminution</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1553,10 +1552,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="b3">
-                                                                            Extensive periarticlular comminution with joint disorganization.</label></p>
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Extensive periarticlular comminution with joint disorganization.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1575,10 +1572,8 @@ function showBoxes(frm){
                                                                     </a>
                                                                 </td>
                                                                 <td align="left" valign="top">
-                                                                    <p style="cursor: pointer; text-align: justify; margin: 0; padding: 0; padding-left: 10px;
-                                                                        padding-right: 10px;">
-                                                                        <label for="b4">
-                                                                            Circumferential comminution of bone with or without bone loss of less than 4 cm.</label></p>
+                                                                    <p style="text-align: justify; margin: 0; padding: 0; padding-left: 10px; padding-right: 10px;">
+                                                                        Circumferential comminution of bone with or without bone loss of less than 4 cm.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1598,9 +1593,8 @@ function showBoxes(frm){
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     <p style="cursor: pointer" align="justify; margin:0; padding:0;padding-left:10px; padding-right:10px;">
-                                                                        <label for="b5">
-                                                                            Comminuted or segmental fractures with primary or secondary bone loss of more than
-                                                                            4 cm.</label></p>
+                                                                        Comminuted or segmental fractures with primary or secondary bone loss of more than
+                                                                        4 cm.</p>
                                                                 </td>
                                                                 <td align="center" valign="top">
                                                                     &nbsp;
@@ -1621,7 +1615,8 @@ function showBoxes(frm){
                                                                 <td align="left" valign="top">
                                                                     <p style="cursor: pointer" align="justify; margin:0; padding:0;padding-left:10px; padding-right:10px;">
                                                                         <label id="rbtnbj1">
-                                                                        Circumferetial wound with skin loss - Wound with Skin Loss
+                                                                            Circumferetial wound with skin loss - Wound with Skin Loss
+                                                                        </label>
                                                                     </p>
                                                                 </td>
                                                                 <td align="center" valign="top">
@@ -1773,156 +1768,135 @@ function showBoxes(frm){
                                                                     </label>
                                                                 </td>
                                                             </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div>
+                                                                        <hr />
+                                                                    </div>
+                                                                    <div align="center">
+                                                                        <br />
+                                                                        <img id="six" src="img/button12.png" alt="Calculate" />
+                                                                    </div>
+                                                                    <div style="text-transform: uppercase; font-weight: bolder">
+                                                                        reference</div>
+                                                                    <div>
+                                                                        <hr>
+                                                                    </div>
+                                                                    <!--<div align="center"><img src="FinalScore.png" /></div>-->
+                                                                    <div align="center">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td align="left">
+                                                                                    Score < 14
+                                                                                </td>
+                                                                                <td>
+                                                                                    :
+                                                                                </td>
+                                                                                <td align="left">
+                                                                                    Limb salvage
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left">
+                                                                                    Score between 14 to 16
+                                                                                </td>
+                                                                                <td>
+                                                                                    :
+                                                                                </td>
+                                                                                <td align="left">
+                                                                                    Grey zone, salvage if good facilities.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left">
+                                                                                    Score > 17
+                                                                                </td>
+                                                                                <td>
+                                                                                    :
+                                                                                </td>
+                                                                                <td align="left">
+                                                                                    Amputation
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div>
+                                                                        <hr>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr id="c9" style="visibility: hidden">
+                                                                <td>
+                                                                    <input id="chk8" class="clearbox" name="cms" type="checkbox">
+                                                                    &nbsp;
+                                                                    <label for="chk8">
+                                                                        Another major injury to the same limb / compartment syndrome
+                                                                    </label>
+                                                                </td>
+                                                            </tr>
                                                         </table>
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <div>
-                                                <hr />
-                                            </div>
-                                            <div align="center">
-                                                <br />
-                                                <img id="six" src="img/button12.png" alt="Calculate" />
-                                            </div>
-                                            <div style="text-transform: uppercase; font-weight: bolder">
-                                                reference</div>
-                                            <div>
-                                                <hr>
-                                            </div>
-                                            <!--<div align="center"><img src="FinalScore.png" /></div>-->
-                                            <div align="center">
-                                                <table>
-                                                    <tr>
-                                                        <td align="left">
-                                                            Score < 14
-                                                        </td>
-                                                        <td>
-                                                            :
-                                                        </td>
-                                                        <td align="left">
-                                                            Limb salvage
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left">
-                                                            Score between 14 to 16
-                                                        </td>
-                                                        <td>
-                                                            :
-                                                        </td>
-                                                        <td align="left">
-                                                            Grey zone, salvage if good facilities.
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left">
-                                                            Score > 17
-                                                        </td>
-                                                        <td>
-                                                            :
-                                                        </td>
-                                                        <td align="left">
-                                                            Amputation
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div>
-                                                <hr>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="overlay" style="display: none;">
                                     <div class="login-wrapper">
-                                        <div class="login-content">
-                                            <a class="close" style="font-weight: bolder">X</a>
-                                            <h3>
-                                                Ganga Hospital Score</h3>
-                                            <table align="center">
-                                                <tr>
-                                                    <td align="center" valign="middle">
-                                                        <table align="center">
-                                                            <tr>
-                                                                <td align="left" valign="top">
-                                                                    <p style="margin: 0; padding: 0">
-                                                                        Covering Tissues Skin Score</p>
-                                                                </td>
-                                                                <td align="center" valign="top">
-                                                                    &nbsp;
-                                                                    <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
-                                                                        id="skinscorevalue" />
-                                                                    &nbsp;
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" valign="top">
-                                                                    <p style="margin: 0; padding: 0">
-                                                                        Muscle, Tendon, Nerves Score
-                                                                    </p>
-                                                                </td>
-                                                                <td align="center" valign="top">
-                                                                    &nbsp;
-                                                                    <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
-                                                                        id="mtnscorevalue" />
-                                                                    &nbsp;
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" valign="top">
-                                                                    <p style="margin: 0; padding: 0">
-                                                                        Bone and Joint score
-                                                                    </p>
-                                                                </td>
-                                                                <td align="center" valign="top">
-                                                                    &nbsp;
-                                                                    <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
-                                                                        id="bjscorevalue" />
-                                                                    &nbsp;
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="left" valign="top">
-                                                                    <p style="margin: 0; padding: 0">
-                                                                        Co-morbid factors influencing outcome
-                                                                    </p>
-                                                                </td>
-                                                                <td align="center" valign="top">
-                                                                    &nbsp;
-                                                                    <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
-                                                                        id="cmsscorevalue" />
-                                                                    &nbsp;
-                                                                    <br />
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td align="center" colspan="2">
-                                                                    <br>
-                                                                    <br>
-                                                                    <br>
-                                                                    <!-- <button  style="width:100px; height:30px;"> Calculate</button> -->
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                    <td align="center" style="padding-left: 20px" valign="top">
-                                                        <div>
-                                                            Score Value</div>
-                                                        <p style="color: #06F; font-size: 36px; font-family: 'Arial Black', Gadget, sans-serif;"
-                                                            id="FinalScorevalue">
-                                                            0</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <div style="text-transform: uppercase; font-weight: bolder">
-                                                Result</div>
-                                            <div>
-                                                <hr>
+                                        <div align="center" class="login-content">
+                                         <a class="close" style="font-weight: bolder">
+                                                                <img alt="" src="images/close.gif" /></a>
+                                            <div id="guideline" style="width: 100%; height: 100%;">
+                                                <img  width="100%" style="cursor: pointer"; display:none; height="100%" src="Guideline.png" />
                                             </div>
-                                            <p id="resultvalue">
-                                            </p>
-                                            <div>
-                                                <hr>
+                                            <div id="scoreblock" align="center">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <h3>
+                                                                Ganga Hospital Score</h3>
+                                                           
+                                                            <p style="padding-bottom: 2px;">
+                                                                Covering Tissues Skin Score &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+                                                                    readonly="true" style="width: 30px; text-align: center" value="0" id="skinscorevalue" /></p>
+                                                            <p style="padding-bottom: 2px;">
+                                                                Muscle, Tendon, Nerves Score &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" readonly="true"
+                                                                    style="width: 30px; text-align: center" value="0" id="mtnscorevalue" />
+                                                            </p>
+                                                            <p style="padding-bottom: 2px;">
+                                                                Bone and Joint score &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                                                                    type="text" readonly="true" style="width: 30px; text-align: center" value="0"
+                                                                    id="bjscorevalue" /></p>
+                                                            <p style="padding-bottom: 2px;">
+                                                                Co-morbid factors influencing
+                                                            </p>
+                                                            <p>
+                                                                outcome &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
+                                                                    id="cmsscorevalue" />
+                                                            </p>
+                                                        </td>
+                                                        <td align="center" style="padding-left: 10px">
+                                                            Score Value
+                                                            <br />
+                                                            <p style="color: #06F; font-size: 36px; font-family: 'Arial Black', Gadget, sans-serif;"
+                                                                id="FinalScorevalue">
+                                                                0</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span style="text-transform: uppercase; font-weight: bolder">Result</span>
+                                                            <hr>
+                                                            <p id="resultvalue">
+                                                            </p>
+                                                            <input id="guide" class="guidebutton" style="display: none" type="button" value="Click here Guideline" />
+                                                           
+                                                            <hr>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
