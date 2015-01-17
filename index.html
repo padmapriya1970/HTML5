@@ -764,7 +764,7 @@ navigator.app.exitApp();
             background: -o-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* Opera 11.10+ */
             background: -ms-linear-gradient(top, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* IE10+ */
             background: linear-gradient(to bottom, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=                                      '#ebe9f9' , endColorstr= '#c1bfea' , GradientType=0 ); /* IE6-9 */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=                                       '#ebe9f9' , endColorstr= '#c1bfea' , GradientType=0 ); /* IE6-9 */
         }
     </style>
 
@@ -1791,26 +1791,62 @@ function showBoxes(frm){
                                                                                             <td>
                                                                                                 <h3>
                                                                                                     Ganga Hospital Score</h3>
-                                                                                                <p style="padding-bottom: 2px;">
-                                                                                                    * &nbsp Covering Tissues Skin Score &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-                                                                                                        type="text" readonly="true" style="width: 30px; text-align: center" value="0"
-                                                                                                        id="skinscorevalue" /></p>
-                                                                                                <p style="padding-bottom: 2px;">
-                                                                                                    * &nbsp Muscle, Tendon, Nerves Score &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" readonly="true"
-                                                                                                        style="width: 30px; text-align: center" value="0" id="mtnscorevalue" />
-                                                                                                </p>
-                                                                                                <p style="padding-bottom: 2px;">
-                                                                                                    * &nbsp Bone and Joint score &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-                                                                                                        type="text" readonly="true" style="width: 30px; text-align: center" value="0"
-                                                                                                        id="bjscorevalue" /></p>
-                                                                                                <p style="padding-bottom: 2px;">
-                                                                                                    * &nbsp Co-morbid factors influencing
-                                                                                                </p>
-                                                                                                <p>
-                                                                                                    outcome &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                                    <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
-                                                                                                        id="cmsscorevalue" />
-                                                                                                </p>
+                                                                                                <table>
+                                                                                                    <tr>
+                                                                                                        <td align="left">
+                                                                                                            <p style="padding-bottom: 2px;">
+                                                                                                                * &nbsp Covering Tissues Skin Score &nbsp;&nbsp;&nbsp
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                        <td align="left">
+                                                                                                            <p>
+                                                                                                                <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
+                                                                                                                    id="skinscorevalue" />
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <p style="padding-bottom: 2px;">
+                                                                                                                * &nbsp Muscle, Tendon, Nerves Score &nbsp;&nbsp;&nbsp;</p>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <p>
+                                                                                                                <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
+                                                                                                                    id="mtnscorevalue" />
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            &nbsp;
+                                                                                                            <p style="padding-bottom: 2px;">
+                                                                                                                * &nbsp Bone and Joint score &nbsp;&nbsp;&nbsp;
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <p>
+                                                                                                                <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
+                                                                                                                    id="bjscorevalue" /></p>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <p style="padding-bottom: 2px;">
+                                                                                                                * &nbsp Co-morbid factors influencing
+                                                                                                            </p>
+                                                                                                            <p>
+                                                                                                                outcome &nbsp;&nbsp;&nbsp;</p>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <p>
+                                                                                                                <input type="text" readonly="true" style="width: 30px; text-align: center" value="0"
+                                                                                                                    id="cmsscorevalue" />
+                                                                                                            </p>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                                
                                                                                             </td>
                                                                                             <td align="center" style="padding-left: 10px">
                                                                                                 Score Value
@@ -1873,7 +1909,7 @@ function showBoxes(frm){
 			$('.litebox').liteBox();
                 </script>
 
-<!-- Zoom Image --->
+                <!-- Zoom Image --->
 
                 <script src="Zoom/dist/easyzoom.js"></script>
 
@@ -1883,8 +1919,9 @@ function showBoxes(frm){
 
 		            // Get the instance API
 		            var api = $easyzoom.data('easyZoom');
-	            </script>
-<!-- End of Zoom Image -->
+                </script>
+
+                <!-- End of Zoom Image -->
             </div>
         </div>
     </div>
