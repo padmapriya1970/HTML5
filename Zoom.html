@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+
+	<title>EasyZoom, jQuery image zoom plugin</title>
+
+	<link rel="stylesheet" href="Zoom/css/example.css" />
+	<link rel="stylesheet" href="Zoom/css/pygments.css" />
+	<link rel="stylesheet" href="Zoom/css/easyzoom.css" />
+
+
+</head>
+<body>
+
+	<div class="container">
+
+		
+
+		<!-- Example -->
+		<section>
+
+			
+
+			<div class="easyzoom easyzoom--overlay">
+				<a href="Zoom/example-images/1_zoom.jpg">
+					<img src="Zoom/example-images/1_standard.jpg" alt="" width="640" height="360" />
+				</a>
+			</div>
+
+			
+		</section>
+
+				
+		</section>
+
+	</div>
+
+
+	<script src="Zoom/jquery-1.10.2.min.js"></script>
+	<script src="Zoom/dist/easyzoom.js"></script>
+	<script>
+		// Instantiate EasyZoom plugin
+		var $easyzoom = $('.easyzoom').easyZoom();
+
+		// Get the instance API
+		var api = $easyzoom.data('easyZoom');
+	</script>
+
+</body>
+</html>
